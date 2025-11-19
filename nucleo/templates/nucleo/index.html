@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Página Inicial - NerdHub{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style_index.css' %}">
+<link rel="stylesheet" href="{% static 'css/style_base_light.css' %}">
+
+<!-- HERO / BANNER -->
+<section class="banner">
+    <img src="{% static 'img/banner.png' %}" alt="Banner Promocional">
+</section>
+
+<!-- BENEFITS STRIP -->
+<section class="beneficios-strip">
+    <div class="container">
+        <div class="b-beneficio"><img src="{% static 'img/icon_cartao.png' %}" alt=""> Em até 12x sem juros</div>
+        <div class="b-beneficio"><img src="{% static 'img/icon_carro_entrega.png' %}" alt=""> Entrega rápida</div>
+        <div class="b-beneficio"><img src="{% static 'img/icon_caixa.png' %}" alt=""> Frete grátis</div>
+        <div class="b-beneficio"><img src="{% static 'img/icon_pix.png' %}" alt=""> Selecione o Pix e ganhe 5% de
+            desconto</div>
+    </div>
+</section>
+
+<!-- BRANDS -->
+<section class="marcas-section">
+    <div class="container">
+        <h3 class="section-title">NAVEGUE POR MARCA FAMOSAS</h3>
+        <div class="brand-buttons">
+            <a class="brand-card" href="{% url 'produtos_por_marca' 'Disney' %}"><img
+                    src="{% static 'img/BannerDisney.png' %}" alt="Disney"></a>
+            <a class="brand-card" href="{% url 'produtos_por_marca' 'Marvel' %}"><img
+                    src="{% static 'img/BannerMarvel.png' %}" alt="Marvel"></a>
+            <a class="brand-card" href="{% url 'produtos_por_marca' 'Star Wars' %}"><img
+                    src="{% static 'img/BannerStarWars.png' %}" alt="Star Wars"></a>
+            <a class="brand-card" href="{% url 'produtos_por_marca' 'PlayStation' %}"><img
+                    src="{% static 'img/BannerPlayStation.png' %}" alt="PlayStation"></a>
+            <a class="brand-card" href="{% url 'produtos_por_marca' 'Xbox' %}"><img
+                    src="{% static 'img/BannerXbox.png' %}" alt="Xbox"></a>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="funkos">
+    <div class="container">
+        <h2>Produtos em Destaque</h2>
+        <div class="funko-grid">
+            {% for produto in produtos %}
+            <div class="funko-item">
+                <div class="funko-image-container">
+                    <a href="{% url 'detalhe_produto' produto.id %}">
+                        {% if produto.imagem_principal %}
+                        <img src="{{ produto.imagem_principal.url }}" alt="{{ produto.nome }}">
+                        {% else %}
+                        <img src="{% static 'img/placeholder_product.png' %}" alt="sem imagem">
+                        {% endif %}
+                    </a>
+                    {% if user.is_authenticated and produto.estoque > 0 %}
+                    <a href="{% url 'adicionar_ao_carrinho' produto.id %}" class="add-to-cart-btn"
+                        title="Adicionar ao carrinho">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                    {% elif not user.is_authenticated %}
+                    <a href="{% url 'usuario:conta' %}" class="login-btn">Entrar</a>
+                    {% endif %}
+                </div>
+                <h3>{{ produto.nome }}</h3>
+                <p class="price">R$ {{ produto.preco|floatformat:2 }}</p>
+                {% if produto.estoque > 0 %}
+                <p class="stock-info" style="color: #28a745;"><i class="fa fa-check-circle"></i> Em estoque</p>
+                {% else %}
+                <p class="stock-info" style="color: #dc3545;"><i class="fa fa-times-circle"></i> Fora de estoque</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
