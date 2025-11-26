@@ -7,3 +7,10 @@ def index(request):
 
 def ver_carrinho(request):
     return HttpResponse("Carrinho ainda não implementado.")
+
+def sobre(request):
+    return HttpResponse("Página Sobre - temporária")
+
+def suporte(request):
+    return HttpResponse("Página de Suporte - temporária")
+
