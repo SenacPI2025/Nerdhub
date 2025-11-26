@@ -22,11 +22,11 @@
                         class="fa fa-search"></i> </button> </div>
             <div class="icons"> <a href="{% url 'nucleo:ver_carrinho' %}" class="cart-icon"> 🛒
                     <!-- <span class="cart-count">0</span> --> </a> {% if user.is_authenticated %} <div
-                    class="user-menu"> <a href="{% url 'usuario:perfil' %}">Olá, {{ user.username }} ▼</a>
-                    <div class="user-menu-content"> <a href="{% url 'usuario:perfil' %}">Meu Perfil</a> <a
-                            href="{% url 'usuario:enderecos' %}">Meus Endereços</a> <a
-                            href="{% url 'usuario:logout' %}">Sair</a> </div>
-                </div> {% else %} <a href="{% url 'usuario:conta' %}">Entrar</a> {% endif %} </div>
+                    class="user-menu"> <a href="#">Olá, {{ user.username }} ▼</a>
+                    <div class="user-menu-content"> <a href="#">Meu Perfil</a> <a
+                            href="#">Meus Endereços</a> <a
+                            href="#">Sair</a> </div>
+                </div> {% else %} <a href="#">Entrar</a> {% endif %} </div>
         </div> <!-- NAVEGACAO VERSAO 3 -->
         <nav class="main-nav">
             <ul>
