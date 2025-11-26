@@ -5,9 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}NerdHub{% endblock %}</title>
+
     <link rel="stylesheet" href="{% static 'css/style_base_light.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    {% block extra_css %}{% endblock %}
 </head>
 
 <body> <!-- HEADER -->
