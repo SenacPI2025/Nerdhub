@@ -20,7 +20,7 @@
         <div class="b-beneficio"><img src="{% static 'img/icon_cartao.png' %}" alt=""> Em até 12x sem juros</div>
         <div class="b-beneficio"><img src="{% static 'img/icon_carro_entrega.png' %}" alt=""> Entrega rápida</div>
         <div class="b-beneficio"><img src="{% static 'img/icon_caixa.png' %}" alt=""> Frete grátis</div>
-        <div class="b-beneficio"><img src="{% static 'img/icon_pix.png' %}" alt=""> Selecione o Pix e ganhe 5% de desconto</div>
+        <div class="b-beneficio"><img src="{% static 'nucleo/img/icon_pix.png' %}" alt=""> Selecione o Pix e ganhe 5% de desconto</div>
     </div>
 </section>
 
@@ -46,7 +46,7 @@
             {% for produto in produtos %}
             <div class="funko-item">
                 <div class="funko-image-container">
-                    <a href="{% url 'detalhe_produto' produto.id %}">
+                    <a href="#">
                         {% if produto.imagem_principal %}
                         <img src="{{ produto.imagem_principal.url }}" alt="{{ produto.nome }}">
                         {% else %}
