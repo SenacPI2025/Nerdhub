@@ -10,9 +10,13 @@
 {% block content %}
 
 <!-- HERO / BANNER -->
-<section class="banner">
-    <img src="{% static 'nucleo/img/banner.png' %}" alt="Banner Promocional">
-</section>
+<div class="carousel">
+    <div class="carousel-track">
+        <img src="{% static 'nucleo/img/banner.jpg' %}" class="carousel-img">
+        <img src="{% static 'nucleo/img/banner2.jpg' %}" class="carousel-img">
+        <img src="{% static 'nucleo/img/banner3.jpg' %}" class="carousel-img">
+    </div>
+</div>
 
 <!-- BENEFITS STRIP -->
 <section class="beneficios-strip">

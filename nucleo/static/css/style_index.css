@@ -1,5 +1,5 @@
 /* style_index.css - homepage layout */
-.banner {
+/* .banner {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -7,11 +7,59 @@
 
 .banner img {
     width: 100%;
-    height: auto; /* ❗ mantém proporção correta */
-    aspect-ratio: 1866 / 1051; /* ❗ igual ao Figma */
+    height: auto; /* ❗ mantém proporção correta 
+    aspect-ratio: 1866 / 1051; /* ❗ igual ao Figma 
     object-fit: cover;
     display: block;
     border-bottom: 8px solid rgba(0, 0, 0, 0.55);
+} */
+
+/* ===== CAROUSEL ===== */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: 300%; /* 3 imagens */
+    animation: slide 18s infinite;
+}
+
+.carousel-img {
+    width: 100%;
+    aspect-ratio: 1866 / 1051; /* proporção do Figma */
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* Transição automática */
+@keyframes slide {
+    0%   { transform: translateX(0); }
+    28%  { transform: translateX(0); }
+
+    33%  { transform: translateX(-100%); }
+    61%  { transform: translateX(-100%); }
+
+    66%  { transform: translateX(-200%); }
+    94%  { transform: translateX(-200%); }
+
+    100% { transform: translateX(0); }
+}
+
+/* ===== RESPONSIVO (no device toolbar vai ficar PERFEITO) ===== */
+@media (max-width: 900px) {
+    .carousel-img {
+        aspect-ratio: 16 / 9; /* reduz a altura sem achatar */
+    }
+}
+
+@media (max-width: 520px) {
+    .carousel-img {
+        aspect-ratio: 4 / 3; /* mobile padrão */
+    }
 }
 
 /* benefits strip under banner */
