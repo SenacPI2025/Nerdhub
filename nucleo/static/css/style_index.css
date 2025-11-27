@@ -2,48 +2,35 @@
 /* ===== CAROUSEL ===== */
 .carousel {
     width: 100%;
+    background: #000;
     display: flex;
-    justify-content: center;        /* centraliza */
-    background: #000;
+    justify-content: center;
     overflow: hidden;
-    padding: 0;
 }
 
-.carousel-inner {
-    max-width: 1866px;              /* largura REAL do banner */
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+.carousel-track {
+    display: flex;
+    width: calc(1866px * 3);  /* tamanho real das 3 imagens */
+    animation: slide 18s infinite;
 }
 
 .carousel-img {
-    width: 100%;
+    width: 1866px;         /* largura Figma */
     height: auto;
-    object-fit: contain;            /* mantém fiel sem cortar */
+    object-fit: contain;
     flex-shrink: 0;
-    display: block;
     background: #000;
 }
-
-.carousel-img {
-    width: 100%;
-    height: auto;       /* mantém a altura original */
-    display: block;
-    object-fit: contain; /* ❗ NÃO corta a imagem */
-    background: #000;
-    flex-shrink: 0;
-}
-
 /* Transição automática */
 @keyframes slide {
     0%   { transform: translateX(0); }
     28%  { transform: translateX(0); }
 
-    33%  { transform: translateX(-100%); }
-    61%  { transform: translateX(-100%); }
+    33%  { transform: translateX(-1866px); }
+    61%  { transform: translateX(-1866px); }
 
-    66%  { transform: translateX(-200%); }
-    94%  { transform: translateX(-200%); }
+    66%  { transform: translateX(-3732px); }
+    94%  { transform: translateX(-3732px); }
 
     100% { transform: translateX(0); }
 }
@@ -251,14 +238,19 @@
 /* ===== RESPONSIVO (no device toolbar vai ficar PERFEITO) ===== */
 @media (max-width: 900px) {
     .carousel-img {
-        object-fit: cover; /* recorta levemente mas fica bonito */
-        height: 320px;     /* altura fixa agradável */
+        width: 100%;
+        object-fit: cover;
+        height: 320px;
+    }
+
+    .carousel-track {
+        width: 300%; /* mobile usa largura automática */
     }
 }
 
 @media (max-width: 520px) {
     .carousel-img {
-        height: 240px;     /* mobile padrão */
+        height: 240px;
         object-fit: cover;
     }
 }
