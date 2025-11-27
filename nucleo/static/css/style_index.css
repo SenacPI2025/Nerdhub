@@ -1,31 +1,28 @@
 /* style_index.css - homepage layout */
-/* .banner {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.banner img {
-    width: 100%;
-    height: auto; /* ❗ mantém proporção correta 
-    aspect-ratio: 1866 / 1051; /* ❗ igual ao Figma 
-    object-fit: cover;
-    display: block;
-    border-bottom: 8px solid rgba(0, 0, 0, 0.55);
-} */
-
 /* ===== CAROUSEL ===== */
 .carousel {
     width: 100%;
-    background: #000; /* garante bordas limpas */
+    display: flex;
+    justify-content: center;        /* centraliza */
+    background: #000;
+    overflow: hidden;
+    padding: 0;
+}
+
+.carousel-inner {
+    max-width: 1866px;              /* largura REAL do banner */
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
 
-.carousel-track {
-    display: flex;
-    width: 300%; /* 3 imagens */
-    animation: slide 18s infinite;
+.carousel-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;            /* mantém fiel sem cortar */
+    flex-shrink: 0;
+    display: block;
+    background: #000;
 }
 
 .carousel-img {
@@ -51,20 +48,6 @@
     100% { transform: translateX(0); }
 }
 
-/* ===== RESPONSIVO (no device toolbar vai ficar PERFEITO) ===== */
-@media (max-width: 900px) {
-    .carousel-img {
-        object-fit: cover; /* recorta levemente mas fica bonito */
-        height: 320px;     /* altura fixa agradável */
-    }
-}
-
-@media (max-width: 520px) {
-    .carousel-img {
-        height: 240px;     /* mobile padrão */
-        object-fit: cover;
-    }
-}
 
 /* benefits strip under banner */
 .beneficios-strip {
@@ -262,5 +245,20 @@
         min-width: 220px;
         height: 120px;
         flex: 0 0 auto;
+    }
+}
+
+/* ===== RESPONSIVO (no device toolbar vai ficar PERFEITO) ===== */
+@media (max-width: 900px) {
+    .carousel-img {
+        object-fit: cover; /* recorta levemente mas fica bonito */
+        height: 320px;     /* altura fixa agradável */
+    }
+}
+
+@media (max-width: 520px) {
+    .carousel-img {
+        height: 240px;     /* mobile padrão */
+        object-fit: cover;
     }
 }
