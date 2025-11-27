@@ -17,6 +17,7 @@
 /* ===== CAROUSEL ===== */
 .carousel {
     width: 100%;
+    background: #000; /* garante bordas limpas */
     overflow: hidden;
     position: relative;
 }
@@ -29,10 +30,11 @@
 
 .carousel-img {
     width: 100%;
-    aspect-ratio: 1866 / 1051; /* proporção do Figma */
-    object-fit: cover;
-    flex-shrink: 0;
+    height: auto;       /* mantém a altura original */
     display: block;
+    object-fit: contain; /* ❗ NÃO corta a imagem */
+    background: #000;
+    flex-shrink: 0;
 }
 
 /* Transição automática */
@@ -52,13 +54,15 @@
 /* ===== RESPONSIVO (no device toolbar vai ficar PERFEITO) ===== */
 @media (max-width: 900px) {
     .carousel-img {
-        aspect-ratio: 16 / 9; /* reduz a altura sem achatar */
+        object-fit: cover; /* recorta levemente mas fica bonito */
+        height: 320px;     /* altura fixa agradável */
     }
 }
 
 @media (max-width: 520px) {
     .carousel-img {
-        aspect-ratio: 4 / 3; /* mobile padrão */
+        height: 240px;     /* mobile padrão */
+        object-fit: cover;
     }
 }
 
