@@ -10,29 +10,49 @@
 
 .carousel-track {
     display: flex;
-    width: calc(1866px * 3);  /* tamanho real das 3 imagens */
+    width: calc(1866px * 3);
+    /* tamanho real das 3 imagens */
     animation: slide 18s infinite;
 }
 
 .carousel-img {
-    width: 1866px;         /* largura Figma */
+    width: 1866px;
+    /* largura Figma */
     height: auto;
     object-fit: contain;
     flex-shrink: 0;
     background: #000;
 }
+
 /* Transição automática */
 @keyframes slide {
-    0%   { transform: translateX(0); }
-    28%  { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
 
-    33%  { transform: translateX(-1866px); }
-    61%  { transform: translateX(-1866px); }
+    28% {
+        transform: translateX(0);
+    }
 
-    66%  { transform: translateX(-3732px); }
-    94%  { transform: translateX(-3732px); }
+    33% {
+        transform: translateX(-100%);
+    }
 
-    100% { transform: translateX(0); }
+    61% {
+        transform: translateX(-100%);
+    }
+
+    66% {
+        transform: translateX(-200%);
+    }
+
+    94% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 
@@ -79,20 +99,24 @@
 }
 
 .brand-card {
-    width: 334px;  /* ❗ TAMANHO DO FIGMA */
-    height: 176px; /* ❗ TAMANHO DO FIGMA */
+    width: 334px;
+    /* ❗ TAMANHO DO FIGMA */
+    height: 176px;
+    /* ❗ TAMANHO DO FIGMA */
     border-radius: 25px;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .brand-card img {
-    max-width: 80%;   /* ❗ impede deformação */
-    max-height: 80%;  /* ❗ impede deformação */
+    max-width: 80%;
+    /* ❗ impede deformação */
+    max-height: 80%;
+    /* ❗ impede deformação */
     object-fit: contain;
 }
 
@@ -244,7 +268,8 @@
     }
 
     .carousel-track {
-        width: 300%; /* mobile usa largura automática */
+        width: 300%;
+        /* mobile usa largura automática */
     }
 }
 
