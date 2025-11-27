@@ -239,10 +239,6 @@
 }
 
 @media (max-width: 900px) {
-    .banner img {
-        aspect-ratio: 16 / 9; /* hero menos alto em mobile */
-    }
-
     .brand-card {
         width: 200px;
         height: 110px;
