@@ -92,14 +92,24 @@
     justify-content: center;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none; /* Remove bordas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave */
+}
+
+.brand-card:hover {
+    transform: translateY(-5px); /* Eleva levemente ao passar o mouse */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
 }
 
 .brand-card img {
-    max-width: 80%;
-    /* ❗ impede deformação */
-    max-height: 80%;
-    /* ❗ impede deformação */
+    max-width: 100%; /* Ajusta para ocupar toda a largura disponível */
+    max-height: 100%; /* Ajusta para ocupar toda a altura disponível */
     object-fit: contain;
+    transition: transform 0.3s ease; /* Adiciona transição suave */
+}
+
+.brand-card:hover img {
+    transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
 }
 
 /* Products grid */
