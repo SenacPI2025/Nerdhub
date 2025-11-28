@@ -71,43 +71,38 @@
 .marcas-section {
     background: transparent;
     padding: 40px 0;
-    position: relative;
-    width: 100%;
-    max-width: 1865px;
-    margin: 0 auto;
-    height: 302px;
-    overflow: hidden;
-}
-
-.brand-background {
-    background: #ffffff;
-    width: 100%;
-    height: 302px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
 }
 
 .brand-buttons {
-    display: block;
-    position: relative;
-    height: 302px;
-    z-index: 2;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 10px 10px 10px; /* Adiciona padding para evitar corte */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.brand-buttons::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
 }
 
 .brand-card {
-    border-radius: 40px;
-    width: 334px;
+    min-width: 334px;
     height: 176px;
-    position: absolute;
-    top: 89px;
-    object-fit: cover;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
+    border-radius: 25px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border: none;
     transition: transform 0.3s ease;
+    flex: 0 0 auto;
 }
 
 .brand-card:hover {
@@ -115,46 +110,20 @@
 }
 
 .brand-card img {
-    border-radius: 40px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
 }
 
-/* Posicionamento específico para cada marca */
-.brand-card:nth-child(1) { /* Disney */
-    left: 25px;
-}
-
-.brand-card:nth-child(2) { /* Marvel */
-    left: 386px;
-}
-
-.brand-card:nth-child(3) { /* Star Wars */
-    left: 760px;
-}
-
-.brand-card:nth-child(4) { /* PlayStation */
-    left: 1133px;
-}
-
-.brand-card:nth-child(5) { /* Xbox */
-    left: 1507px;
+.brand-card:hover img {
+    transform: scale(1.05);
 }
 
 .section-title {
-    color: #55a143;
-    text-align: left;
-    font-family: "LuckiestGuy-Regular", sans-serif;
-    font-size: 25px;
-    font-weight: 400;
-    position: absolute;
-    left: 38px;
-    top: 36px;
-    width: 370px;
-    height: 25px;
-    z-index: 3;
-    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Products grid */
@@ -266,106 +235,32 @@
 }
 
 /* Responsive */
-@media (max-width: 1865px) {
-    .marcas-section {
-        transform: scale(calc(100vw / 1865));
-        transform-origin: top left;
-    }
-}
-
 @media (max-width: 1200px) {
-    .marcas-section {
-        height: 220px;
-    }
-    
     .brand-card {
-        width: 250px;
-        height: 132px;
-        top: 65px;
-    }
-    
-    .brand-card:nth-child(1) { left: 18px; }
-    .brand-card:nth-child(2) { left: 290px; }
-    .brand-card:nth-child(3) { left: 562px; }
-    .brand-card:nth-child(4) { left: 834px; }
-    .brand-card:nth-child(5) { left: 1106px; }
-    
-    .section-title {
-        font-size: 20px;
-        left: 28px;
-        top: 26px;
+        min-width: 260px;
+        height: 140px;
+        padding: 15px;
     }
 }
 
 @media (max-width: 900px) {
-    .marcas-section {
-        height: 180px;
-    }
-    
     .brand-card {
-        width: 200px;
-        height: 105px;
-        top: 52px;
-    }
-    
-    .brand-card:nth-child(1) { left: 15px; }
-    .brand-card:nth-child(2) { left: 230px; }
-    .brand-card:nth-child(3) { left: 445px; }
-    .brand-card:nth-child(4) { left: 660px; }
-    .brand-card:nth-child(5) { left: 875px; }
-    
-    .section-title {
-        font-size: 18px;
-        left: 22px;
-        top: 20px;
+        min-width: 200px;
+        height: 110px;
+        padding: 12px;
     }
 }
 
-@media (max-width: 768px) {
-    .marcas-section {
-        height: 150px;
+@media (max-width: 520px) {
+    .brand-buttons {
+        gap: 16px;
+        padding: 10px 5px;
     }
-    
-    .brand-card {
-        width: 165px;
-        height: 87px;
-        top: 43px;
-    }
-    
-    .brand-card:nth-child(1) { left: 12px; }
-    .brand-card:nth-child(2) { left: 190px; }
-    .brand-card:nth-child(3) { left: 368px; }
-    .brand-card:nth-child(4) { left: 546px; }
-    .brand-card:nth-child(5) { left: 724px; }
-    
-    .section-title {
-        font-size: 16px;
-        left: 18px;
-        top: 17px;
-    }
-}
 
-@media (max-width: 576px) {
-    .marcas-section {
+    .brand-card {
+        min-width: 220px;
         height: 120px;
-    }
-    
-    .brand-card {
-        width: 130px;
-        height: 69px;
-        top: 34px;
-    }
-    
-    .brand-card:nth-child(1) { left: 10px; }
-    .brand-card:nth-child(2) { left: 150px; }
-    .brand-card:nth-child(3) { left: 290px; }
-    .brand-card:nth-child(4) { left: 430px; }
-    .brand-card:nth-child(5) { left: 570px; }
-    
-    .section-title {
-        font-size: 14px;
-        left: 15px;
-        top: 14px;
+        padding: 15px;
     }
 }
 
