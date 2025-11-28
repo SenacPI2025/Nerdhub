@@ -13,32 +13,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body> <!-- HEADER -->
-    <header class="top-header">
-        <div class="top-bar">
-            <div class="logo"> <a href="{% url 'nucleo:index' %}">NERDHUB</a> </div>
-            <div class="search-container"> <input class="search-input" type="text"
-                    placeholder="O que você está procurando?"> <button class="search-button"> <i
-                        class="fa fa-search"></i> </button> </div>
-            <div class="icons"> <a href="{% url 'nucleo:ver_carrinho' %}" class="cart-icon"> 🛒
-                    <!-- <span class="cart-count">0</span> --> </a> {% if user.is_authenticated %} <div
-                    class="user-menu"> <a href="#">Olá, {{ user.username }} ▼</a>
-                    <div class="user-menu-content"> <a href="#">Meu Perfil</a> <a
-                            href="#">Meus Endereços</a> <a
-                            href="#">Sair</a> </div>
-                </div> {% else %} <a href="#">Entrar</a> {% endif %} </div>
-        </div> <!-- NAVEGACAO VERSAO 3 -->
-        <nav class="main-nav">
-            <ul>
-                <li> <a href="{% url 'nucleo:index' %}"
-                        class="nav-link {% if page_name == 'index' %}active{% endif %}">Início</a> </li>
-                <li> <a href="{% url 'nucleo:sobre' %}"
-                        class="nav-link {% if page_name == 'sobre' %}active{% endif %}">Sobre</a> </li>
-                <li> <a href="{% url 'nucleo:suporte' %}"
-                        class="nav-link {% if page_name == 'suporte' %}active{% endif %}">Suporte</a> </li>
-            </ul>
-        </nav>
-    </header> <!-- CONTEÚDO -->
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-barra-de-pesquisa-icons-carrinho-e-perfil">
+                <div class="espaco-para-a-logo-centralizar-lugar-certo"></div>
+                <div class="logo-nerd-hub">NERDHUB</div>
+                <div class="nav-barra-de-pesquisa">
+                    <div class="container">
+                        <div class="barra-de-pesquisa">
+                            <div class="input">
+                                <div class="container2">
+                                    <input type="text" class="o-que-voc-est-procurando" placeholder="O que você está procurando?">
+                                </div>
+                            </div>
+                            <div class="button">
+                                <div class="container3">
+                                    <div class="container4">
+                                        <i class="fa fa-search icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="icons-perfil-e-carrinho">
+                    <div class="link">
+                        <div class="container5">
+                            <div class="container4">
+                                <a href="{% url 'nucleo:ver_carrinho' %}" class="cart-icon">
+                                    <i class="fa fa-shopping-cart icon2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="link-margin">
+                        <div class="link">
+                            <div class="container5">
+                                <div class="container4">
+                                    {% if user.is_authenticated %}
+                                    <div class="user-menu">
+                                        <a href="#">Olá, {{ user.username }} ▼</a>
+                                        <div class="user-menu-content">
+                                            <a href="#">Meu Perfil</a>
+                                            <a href="#">Meus Endereços</a>
+                                            <a href="#">Sair</a>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <a href="#">Entrar</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="nav">
+                <div class="nav-buttons">
+                    <div class="button-principal">
+                        <div class="button2"></div>
+                        <a href="{% url 'nucleo:index' %}" class="principal {% if page_name == 'index' %}active{% endif %}">Principal</a>
+                    </div>
+                    <div class="button-sobre-nos">
+                        <div class="selecionado-1"></div>
+                        <a href="{% url 'nucleo:sobre' %}" class="sobre-n-s {% if page_name == 'sobre' %}active{% endif %}">Sobre Nós</a>
+                    </div>
+                    <div class="s-selecionado">
+                        <div class="selecionado-12"></div>
+                        <a href="{% url 'nucleo:suporte' %}" class="suporte {% if page_name == 'suporte' %}active{% endif %}">Suporte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- CONTEÚDO -->
     <main> {% if messages %} <div class="messages"> {% for message in messages %} <div
                 class="alert alert-{{ message.tags }}"> {{ message }} </div> {% endfor %} </div> {% endif %} {% block content %}{% endblock %} </main> <!-- FOOTER -->
     <footer>
