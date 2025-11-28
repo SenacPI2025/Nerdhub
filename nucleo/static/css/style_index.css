@@ -86,25 +86,25 @@
     height: 176px;
     /* ❗ TAMANHO DO FIGMA */
     border-radius: 25px;
-    background: #fff;
+    background: transparent; /* Remove o fundo branco */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0; /* Remove o padding */
+    box-shadow: none; /* Remove a sombra */
     border: none; /* Remove bordas */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave */
+    transition: transform 0.3s ease; /* Mantém transição suave */
 }
 
 .brand-card:hover {
     transform: translateY(-5px); /* Eleva levemente ao passar o mouse */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
 }
 
 .brand-card img {
-    max-width: 100%; /* Ajusta para ocupar toda a largura disponível */
-    max-height: 100%; /* Ajusta para ocupar toda a altura disponível */
-    object-fit: contain;
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: 100%; /* Ocupa toda a altura do contêiner */
+    object-fit: contain; /* Mantém proporção da imagem */
+    border-radius: 25px; /* Mantém bordas arredondadas */
     transition: transform 0.3s ease; /* Adiciona transição suave */
 }
 
