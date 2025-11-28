@@ -12,7 +12,7 @@
     display: flex;
     width: calc(1866px * 3);
     /* tamanho real das 3 imagens */
-    animation: slide 18s infinite;
+    animation: slide 15s infinite;
 }
 
 .carousel-img {
@@ -27,15 +27,13 @@
 /* Transição automática */
 @keyframes slide {
     0%   { transform: translateX(0); }
-    28%  { transform: translateX(0); }
-
-    33%  { transform: translateX(-100vw); }
-    61%  { transform: translateX(-100vw); }
-
-    66%  { transform: translateX(-200vw); }
-    94%  { transform: translateX(-200vw); }
-
-    100% { transform: translateX(0); }
+    33%  { transform: translateX(0); }
+    
+    34%  { transform: translateX(-1866px); }
+    67%  { transform: translateX(-1866px); }
+    
+    68%  { transform: translateX(-3732px); }
+    100% { transform: translateX(-3732px); }
 }
 
 
