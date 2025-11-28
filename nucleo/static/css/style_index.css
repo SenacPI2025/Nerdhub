@@ -76,30 +76,32 @@
 .brand-buttons {
     display: flex;
     gap: 24px;
-    justify-content: center;
+    justify-content: flex-start; /* Alinha ao início */
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 10px 10px 10px 10px; /* Adiciona padding para evitar corte */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+    padding: 10px 5px; /* Padding reduzido */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 auto; /* Centraliza o container */
+    max-width: calc(100vw - 20px); /* Limita a largura para evitar corte */
 }
 
 .brand-buttons::-webkit-scrollbar {
     width: 0px;
     height: 0px;
-    background: transparent; /* Chrome/Safari/Webkit */
+    background: transparent;
 }
 
 .brand-card {
     min-width: 334px;
     height: 176px;
     border-radius: 25px;
-    background: #fff;
+    background: transparent; /* Remove o fundo branco */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0; /* Remove o padding */
+    box-shadow: none; /* Remove a sombra */
     border: none;
     transition: transform 0.3s ease;
     flex: 0 0 auto;
@@ -110,8 +112,8 @@
 }
 
 .brand-card img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     border-radius: 25px;
     transition: transform 0.3s ease;
@@ -239,7 +241,6 @@
     .brand-card {
         min-width: 260px;
         height: 140px;
-        padding: 15px;
     }
 }
 
@@ -247,20 +248,32 @@
     .brand-card {
         min-width: 200px;
         height: 110px;
-        padding: 12px;
     }
 }
 
 @media (max-width: 520px) {
     .brand-buttons {
         gap: 16px;
-        padding: 10px 5px;
+        padding: 10px 2px;
+        max-width: calc(100vw - 4px); /* Ajusta para telas pequenas */
     }
 
     .brand-card {
-        min-width: 220px;
-        height: 120px;
-        padding: 15px;
+        min-width: 180px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .brand-buttons {
+        gap: 12px;
+        padding: 10px 1px;
+        max-width: calc(100vw - 2px);
+    }
+
+    .brand-card {
+        min-width: 160px;
+        height: 90px;
     }
 }
 
