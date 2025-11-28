@@ -77,13 +77,15 @@
     display: flex;
     gap: 24px;
     justify-content: center;
-    flex-wrap: nowrap; /* Impede quebra de linha */
-    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
-    padding: 10px 0; /* Espaçamento para rolagem */
+    flex-wrap: nowrap;
+    overflow-x: hidden; /* Esconde a barra de rolagem */
+    padding: 10px 0;
+    width: 100%;
 }
 
 .brand-card {
-    min-width: 334px; /* Largura mínima para manter proporção */
+    flex: 1; /* Distribui igualmente o espaço disponível */
+    min-width: 200px; /* Largura mínima para manter proporção */
     height: 176px;
     border-radius: 25px;
     background: transparent;
@@ -94,7 +96,7 @@
     box-shadow: none;
     border: none;
     transition: transform 0.3s ease;
-    flex: 0 0 auto; /* Impede que os itens encolham */
+    max-width: 334px; /* Limita a largura máxima */
 }
 
 .brand-card:hover {
@@ -222,94 +224,28 @@
 }
 
 /* Responsive */
-@media (max-width: 1800px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-    }
-    
+@media (max-width: 1200px) {
     .brand-card {
-        min-width: 300px;
-        height: 160px;
-    }
-}
-
-@media (max-width: 1600px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-    }
-    
-    .brand-card {
-        min-width: 280px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 1400px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-    }
-    
-    .brand-card {
-        min-width: 260px;
         height: 140px;
     }
 }
 
-@media (max-width: 1200px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-    }
-    
+@media (max-width: 900px) {
     .brand-card {
-        min-width: 240px;
-        height: 130px;
-    }
-}
-
-@media (max-width: 992px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-    }
-    
-    .brand-card {
-        min-width: 220px;
-        height: 120px;
-    }
-}
-
-@media (max-width: 768px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-        gap: 16px;
-    }
-    
-    .brand-card {
-        min-width: 200px;
         height: 110px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 520px) {
     .brand-buttons {
-        flex-wrap: nowrap;
-        gap: 12px;
+        gap: 16px;
+        justify-content: flex-start;
     }
-    
-    .brand-card {
-        min-width: 180px;
-        height: 100px;
-    }
-}
 
-@media (max-width: 480px) {
-    .brand-buttons {
-        flex-wrap: nowrap;
-        gap: 10px;
-    }
-    
     .brand-card {
-        min-width: 160px;
-        height: 90px;
+        min-width: 220px;
+        height: 120px;
+        flex: 0 0 auto;
     }
 }
 
