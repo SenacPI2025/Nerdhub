@@ -77,39 +77,40 @@
     display: flex;
     gap: 24px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+    padding: 10px 0; /* Espaçamento para rolagem */
 }
 
 .brand-card {
-    width: 334px;
-    /* ❗ TAMANHO DO FIGMA */
+    min-width: 334px; /* Largura mínima para manter proporção */
     height: 176px;
-    /* ❗ TAMANHO DO FIGMA */
     border-radius: 25px;
-    background: transparent; /* Remove o fundo branco */
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Remove o padding */
-    box-shadow: none; /* Remove a sombra */
-    border: none; /* Remove bordas */
-    transition: transform 0.3s ease; /* Mantém transição suave */
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    transition: transform 0.3s ease;
+    flex: 0 0 auto; /* Impede que os itens encolham */
 }
 
 .brand-card:hover {
-    transform: translateY(-5px); /* Eleva levemente ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .brand-card img {
-    width: 100%; /* Ocupa toda a largura do contêiner */
-    height: 100%; /* Ocupa toda a altura do contêiner */
-    object-fit: contain; /* Mantém proporção da imagem */
-    border-radius: 25px; /* Mantém bordas arredondadas */
-    transition: transform 0.3s ease; /* Adiciona transição suave */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
 }
 
 .brand-card:hover img {
-    transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Products grid */
@@ -221,33 +222,94 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1800px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+    }
+    
     .brand-card {
-        width: 260px;
+        min-width: 300px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+    }
+    
+    .brand-card {
+        min-width: 280px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+    }
+    
+    .brand-card {
+        min-width: 260px;
         height: 140px;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+    }
+    
     .brand-card {
-        width: 200px;
+        min-width: 240px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 992px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+    }
+    
+    .brand-card {
+        min-width: 220px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+    
+    .brand-card {
+        min-width: 200px;
         height: 110px;
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 576px) {
     .brand-buttons {
-        display: flex;
-        overflow-x: auto;
-        padding-left: 10px;
-        gap: 16px;
-        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 12px;
     }
-
+    
     .brand-card {
-        min-width: 220px;
-        height: 120px;
-        flex: 0 0 auto;
+        min-width: 180px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-buttons {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+    
+    .brand-card {
+        min-width: 160px;
+        height: 90px;
     }
 }
 
