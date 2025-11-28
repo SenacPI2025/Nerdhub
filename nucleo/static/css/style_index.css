@@ -71,32 +71,43 @@
 .marcas-section {
     background: transparent;
     padding: 40px 0;
+    position: relative;
+    width: 100%;
+    max-width: 1865px;
+    margin: 0 auto;
+    height: 302px;
+    overflow: hidden;
+}
+
+.brand-background {
+    background: #ffffff;
+    width: 100%;
+    height: 302px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 
 .brand-buttons {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: nowrap;
-    overflow-x: hidden; /* Esconde a barra de rolagem */
-    padding: 10px 0;
-    width: 100%;
+    display: block;
+    position: relative;
+    height: 302px;
+    z-index: 2;
 }
 
 .brand-card {
-    flex: 1; /* Distribui igualmente o espaço disponível */
-    min-width: 200px; /* Largura mínima para manter proporção */
+    border-radius: 40px;
+    width: 334px;
     height: 176px;
-    border-radius: 25px;
+    position: absolute;
+    top: 89px;
+    object-fit: cover;
     background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0;
     box-shadow: none;
     border: none;
     transition: transform 0.3s ease;
-    max-width: 334px; /* Limita a largura máxima */
 }
 
 .brand-card:hover {
@@ -104,15 +115,46 @@
 }
 
 .brand-card img {
+    border-radius: 40px;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border-radius: 25px;
-    transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
-.brand-card:hover img {
-    transform: scale(1.05);
+/* Posicionamento específico para cada marca */
+.brand-card:nth-child(1) { /* Disney */
+    left: 25px;
+}
+
+.brand-card:nth-child(2) { /* Marvel */
+    left: 386px;
+}
+
+.brand-card:nth-child(3) { /* Star Wars */
+    left: 760px;
+}
+
+.brand-card:nth-child(4) { /* PlayStation */
+    left: 1133px;
+}
+
+.brand-card:nth-child(5) { /* Xbox */
+    left: 1507px;
+}
+
+.section-title {
+    color: #55a143;
+    text-align: left;
+    font-family: "LuckiestGuy-Regular", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    position: absolute;
+    left: 38px;
+    top: 36px;
+    width: 370px;
+    height: 25px;
+    z-index: 3;
+    margin: 0;
 }
 
 /* Products grid */
@@ -224,28 +266,106 @@
 }
 
 /* Responsive */
+@media (max-width: 1865px) {
+    .marcas-section {
+        transform: scale(calc(100vw / 1865));
+        transform-origin: top left;
+    }
+}
+
 @media (max-width: 1200px) {
+    .marcas-section {
+        height: 220px;
+    }
+    
     .brand-card {
-        height: 140px;
+        width: 250px;
+        height: 132px;
+        top: 65px;
+    }
+    
+    .brand-card:nth-child(1) { left: 18px; }
+    .brand-card:nth-child(2) { left: 290px; }
+    .brand-card:nth-child(3) { left: 562px; }
+    .brand-card:nth-child(4) { left: 834px; }
+    .brand-card:nth-child(5) { left: 1106px; }
+    
+    .section-title {
+        font-size: 20px;
+        left: 28px;
+        top: 26px;
     }
 }
 
 @media (max-width: 900px) {
+    .marcas-section {
+        height: 180px;
+    }
+    
     .brand-card {
-        height: 110px;
+        width: 200px;
+        height: 105px;
+        top: 52px;
+    }
+    
+    .brand-card:nth-child(1) { left: 15px; }
+    .brand-card:nth-child(2) { left: 230px; }
+    .brand-card:nth-child(3) { left: 445px; }
+    .brand-card:nth-child(4) { left: 660px; }
+    .brand-card:nth-child(5) { left: 875px; }
+    
+    .section-title {
+        font-size: 18px;
+        left: 22px;
+        top: 20px;
     }
 }
 
-@media (max-width: 520px) {
-    .brand-buttons {
-        gap: 16px;
-        justify-content: flex-start;
+@media (max-width: 768px) {
+    .marcas-section {
+        height: 150px;
     }
-
+    
     .brand-card {
-        min-width: 220px;
+        width: 165px;
+        height: 87px;
+        top: 43px;
+    }
+    
+    .brand-card:nth-child(1) { left: 12px; }
+    .brand-card:nth-child(2) { left: 190px; }
+    .brand-card:nth-child(3) { left: 368px; }
+    .brand-card:nth-child(4) { left: 546px; }
+    .brand-card:nth-child(5) { left: 724px; }
+    
+    .section-title {
+        font-size: 16px;
+        left: 18px;
+        top: 17px;
+    }
+}
+
+@media (max-width: 576px) {
+    .marcas-section {
         height: 120px;
-        flex: 0 0 auto;
+    }
+    
+    .brand-card {
+        width: 130px;
+        height: 69px;
+        top: 34px;
+    }
+    
+    .brand-card:nth-child(1) { left: 10px; }
+    .brand-card:nth-child(2) { left: 150px; }
+    .brand-card:nth-child(3) { left: 290px; }
+    .brand-card:nth-child(4) { left: 430px; }
+    .brand-card:nth-child(5) { left: 570px; }
+    
+    .section-title {
+        font-size: 14px;
+        left: 15px;
+        top: 14px;
     }
 }
 
