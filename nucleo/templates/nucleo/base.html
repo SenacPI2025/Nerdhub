@@ -71,24 +71,14 @@
                 </div>
             </div>
         </div>
-        <div class="nav-bar">
-            <div class="nav">
-                <div class="nav-buttons">
-                    <div class="button-principal">
-                        <div class="button2"></div>
-                        <a href="{% url 'nucleo:index' %}" class="principal {% if page_name == 'index' %}active{% endif %}">Principal</a>
-                    </div>
-                    <div class="button-sobre-nos">
-                        <div class="selecionado-1"></div>
-                        <a href="{% url 'nucleo:sobre' %}" class="sobre-n-s {% if page_name == 'sobre' %}active{% endif %}">Sobre Nós</a>
-                    </div>
-                    <div class="s-selecionado">
-                        <div class="selecionado-12"></div>
-                        <a href="{% url 'nucleo:suporte' %}" class="suporte {% if page_name == 'suporte' %}active{% endif %}">Suporte</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- NAVIGATION BAR - ESTILO ORIGINAL -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{% url 'nucleo:index' %}" class="nav-link {% if page_name == 'index' %}active{% endif %}">Início</a></li>
+                <li><a href="{% url 'nucleo:sobre' %}" class="nav-link {% if page_name == 'sobre' %}active{% endif %}">Sobre</a></li>
+                <li><a href="{% url 'nucleo:suporte' %}" class="nav-link {% if page_name == 'suporte' %}active{% endif %}">Suporte</a></li>
+            </ul>
+        </nav>
     </header>
     <!-- CONTEÚDO -->
     <main> {% if messages %} <div class="messages"> {% for message in messages %} <div

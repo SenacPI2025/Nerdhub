@@ -50,6 +50,9 @@
     justify-content: space-between;
     gap: 16px;
     align-items: center;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 .b-beneficio {
