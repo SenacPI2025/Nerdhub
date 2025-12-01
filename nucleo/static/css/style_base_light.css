@@ -638,28 +638,28 @@ footer {
 
 .mainsobrenos {
   position: relative;
-  width: 100%;
-  max-width: 1869px;
-  margin: 0 auto;
 }
 
 .back-ground {
   width: 1869px;
   height: 908.92px;
-  position: relative;
+  position: static;
 }
 
 .fundo-da-pagina {
-  width: 100%;
-  height: 100%;
+  width: 1869px;
+  height: 908.92px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
   object-fit: cover;
+  aspect-ratio: 1869/908.92;
 }
 
 .main-content {
   width: 1868px;
   height: 906px;
-  position: relative;
-  margin-top: -906px;
+  position: static;
 }
 
 .frame-296 {
@@ -688,7 +688,7 @@ footer {
   width: 706px;
   height: 221px;
   position: absolute;
-  left: 10%;
+  left: 173px;
   top: 106px;
 }
 
@@ -748,7 +748,7 @@ footer {
   width: 706px;
   height: 221px;
   position: absolute;
-  left: 10%;
+  left: 173px;
   top: 366px;
 }
 
@@ -786,7 +786,7 @@ footer {
   width: 706px;
   height: 217px;
   position: absolute;
-  right: 10%;
+  left: 173px;
   top: 624px;
 }
 
@@ -842,7 +842,7 @@ footer {
   line-height: 28px;
   font-weight: 400;
   position: absolute;
-  left: 20px;
+  left: 0px;
   top: 0px;
   width: 349.68px;
   height: 28px;
@@ -856,7 +856,7 @@ footer {
   line-height: 28px;
   font-weight: 400;
   position: absolute;
-  left: 20px;
+  left: 0px;
   top: 0px;
   width: 383.07px;
   height: 28px;
@@ -870,7 +870,7 @@ footer {
   line-height: 28px;
   font-weight: 400;
   position: absolute;
-  left: 20px;
+  left: 0px;
   top: 0px;
   width: 294.9px;
   height: 28px;
@@ -884,7 +884,7 @@ footer {
   line-height: 28px;
   font-weight: 400;
   position: absolute;
-  left: 20px;
+  left: 0px;
   top: 0px;
   width: 336.04px;
   height: 28px;
@@ -902,7 +902,7 @@ footer {
   width: 706px;
   height: 221px;
   position: absolute;
-  right: 10%;
+  left: 917px;
   top: 106px;
 }
 
@@ -940,7 +940,7 @@ footer {
   width: 706px;
   height: 221px;
   position: absolute;
-  right: 10%;
+  left: 917px;
   top: 366px;
 }
 
@@ -978,8 +978,8 @@ footer {
   width: 706px;
   height: 217px;
   position: absolute;
-  right: 10%;
-  top: 860px; /* Posição ajustada para ficar após Nossos Valores */
+  left: 917px;
+  top: 624px;
 }
 
 .entre-em-contato2 {
@@ -1073,24 +1073,29 @@ footer {
 
 .quem-somos {
   color: #ffffff;
-  text-align: center;
+  text-align: left;
   font-family: "Inter-Bold", sans-serif;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 40px;
   font-weight: 700;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 30px; /* Movendo para o topo */
+  left: 173px;
+  top: 24px;
+  width: 1450px;
+  height: 31px;
+  -webkit-text-stroke: 3px #000000;
 }
 
 .linha-separadora {
-  width: 80%;
-  height: 2px;
-  background: #ffffff;
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 1450px;
+  height: 0px;
   position: absolute;
-  left: 10%;
-  top: 80px; /* Ajustando posição abaixo do título */
+  left: 173px;
+  top: 81px;
 }
 
 /* Responsive adjustments for Sobre Nós page */
