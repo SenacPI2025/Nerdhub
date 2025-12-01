@@ -42,11 +42,13 @@
 .beneficios {
     background-color: #2C2C2C;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 1rem;
     color: white;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .beneficio-item {
@@ -54,20 +56,104 @@
     align-items: center;
     gap: 0.75rem;
     background-color: transparent;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border-radius: 8px;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    justify-content: center;
 }
 
 .beneficio-item img {
     width: 32px;
     height: 32px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .beneficio-item p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .beneficio-item p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .beneficios {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .beneficio-item {
+        gap: 0.5rem;
+        padding: 0.4rem;
+    }
+    
+    .beneficio-item img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .beneficios {
+        padding: 1rem 0.5rem;
+    }
+    
+    .beneficio-item {
+        gap: 0.4rem;
+        padding: 0.3rem;
+    }
+    
+    .beneficio-item img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .beneficios {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .beneficio-item {
+        gap: 0.3rem;
+        padding: 0.2rem;
+    }
+    
+    .beneficio-item img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .beneficios {
+        padding: 0.6rem 0.2rem;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.65rem;
+    }
 }
 
 /* Brands row */
