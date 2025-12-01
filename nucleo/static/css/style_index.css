@@ -166,7 +166,7 @@
 .brand-buttons {
     display: flex;
     gap: 24px;
-    justify-content: flex-start; /* Alinha ao início */
+    justify-content: center; /* Alinha ao início */
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 10px 5px; /* Padding reduzido */
