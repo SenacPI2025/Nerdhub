@@ -72,6 +72,7 @@
 
 /* Brands row */
 .marcas-section {
+    align-items: center;
     background: transparent;
     padding: 40px 0;
 }
