@@ -39,35 +39,35 @@
 
 
 /* benefits strip under banner */
-.beneficios-strip {
-    background: #2f2f2f;
-    color: #fff;
-    padding: 12px 0;
-}
-
-.beneficios-strip .container {
+.beneficios {
+    background-color: #2C2C2C;
     display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    align-items: center;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    color: white;
 }
 
-.b-beneficio {
+.beneficio-item {
     display: flex;
-    gap: 12px;
     align-items: center;
-    font-size: 13px;
-    color: #fff;
-    opacity: .95;
+    gap: 0.75rem;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
 }
 
-.b-beneficio img {
-    width: 24px;
-    height: 24px;
+.beneficio-item img {
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+}
+
+.beneficio-item p {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 /* Brands row */
