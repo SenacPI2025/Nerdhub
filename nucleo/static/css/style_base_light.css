@@ -48,16 +48,14 @@ body {
 
 .header-top {
     background: #55a143;
-    padding: 12px 24px;
+    padding: 12px 0;
     display: flex;
     flex-direction: column;
     gap: 0px;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    max-width: 1865px;
     height: 77px;
-    margin: 0 auto;
 }
 
 .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
@@ -67,8 +65,10 @@ body {
     justify-content: space-between;
     flex-shrink: 0;
     width: 100%;
-    max-width: 1870px;
     position: relative;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 .espaco-para-a-logo-centralizar-lugar-certo {
@@ -98,7 +98,7 @@ body {
 }
 
 .nav-barra-de-pesquisa {
-    padding: 0px 24px;
+    padding: 0px 16px;
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -106,6 +106,8 @@ body {
     justify-content: flex-start;
     flex: 1;
     position: relative;
+    width: 100%;
+    max-width: 576px;
 }
 
 .container {
@@ -117,6 +119,7 @@ body {
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
+    width: 100%;
 }
 
 .barra-de-pesquisa {
@@ -126,8 +129,7 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
     flex-shrink: 0;
-    width: 576px;
-    max-width: 576px;
+    width: 100%;
     position: relative;
 }
 
@@ -144,6 +146,7 @@ body {
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .container2 {
@@ -289,6 +292,7 @@ body {
     list-style: none;
     max-width: var(--container);
     margin: 0 auto;
+    padding: 0 16px;
 }
 
 .main-nav a {
@@ -391,7 +395,7 @@ footer {
 }
 
 /* Responsive helper */
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
     .container {
         padding: 0 12px;
     }
@@ -399,5 +403,201 @@ footer {
     .main-nav ul {
         flex-wrap: wrap;
         gap: 8px;
+    }
+    
+    .nav-barra-de-pesquisa {
+        max-width: 400px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-top {
+        padding: 10px 0;
+        height: auto;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 12px;
+    }
+    
+    .espaco-para-a-logo-centralizar-lugar-certo {
+        width: 40px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 20px;
+        width: 90px;
+    }
+    
+    .nav-barra-de-pesquisa {
+        order: 3;
+        max-width: 100%;
+        padding: 0 12px;
+    }
+    
+    .barra-de-pesquisa {
+        max-width: 100%;
+    }
+    
+    .icons-perfil-e-carrinho {
+        gap: 10px;
+    }
+    
+    .link-margin {
+        padding: 0 0 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 8px 0;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        padding: 0 10px;
+        gap: 8px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 18px;
+        width: 80px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 13px;
+    }
+    
+    .icon, .icon2, .icon3 {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .link {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .main-nav ul {
+        gap: 6px;
+        padding: 0 10px;
+    }
+    
+    .main-nav a {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-top {
+        padding: 6px 0;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        padding: 0 8px;
+        gap: 6px;
+    }
+    
+    .espaco-para-a-logo-centralizar-lugar-certo {
+        width: 20px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 16px;
+        width: 70px;
+    }
+    
+    .nav-barra-de-pesquisa {
+        padding: 0 8px;
+    }
+    
+    .input {
+        padding: 8px 12px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 12px;
+    }
+    
+    .button {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .icon, .icon2, .icon3 {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .link {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .link-margin {
+        padding: 0 0 0 6px;
+        width: 40px;
+    }
+    
+    .main-nav ul {
+        gap: 4px;
+        padding: 0 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-nav a {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-top {
+        padding: 4px 0;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        padding: 0 6px;
+        gap: 4px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 14px;
+        width: 60px;
+    }
+    
+    .input {
+        padding: 6px 10px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 11px;
+    }
+    
+    .button {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .icon, .icon2, .icon3 {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .link {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .main-nav a {
+        padding: 3px 5px;
+        font-size: 11px;
     }
 }
