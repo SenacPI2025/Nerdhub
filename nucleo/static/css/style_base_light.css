@@ -312,7 +312,8 @@ body {
 }
 
 .main-nav a.active {
-    background: #222;
+    background: #55A143; /* Cor verde para página ativa */
+    color: #fff;
 }
 
 .user-menu {
@@ -627,4 +628,641 @@ footer {
         padding: 3px 5px;
         font-size: 11px;
     }
+}
+
+/* Sobre Nós Page Styles */
+.mainsobrenos,
+.mainsobrenos * {
+  box-sizing: border-box;
+}
+
+.mainsobrenos {
+  position: relative;
+  width: 100%;
+  max-width: 1869px;
+  margin: 0 auto;
+}
+
+.back-ground {
+  width: 100%;
+  height: 908.92px;
+  position: relative;
+}
+
+.fundo-da-pagina {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-content {
+  width: 100%;
+  height: 906px;
+  position: relative;
+  margin-top: -906px;
+}
+
+.frame-296 {
+  background: linear-gradient(
+    180deg,
+    rgba(163, 163, 163, 0.35) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  width: 100%;
+  height: 906px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nossa-historia {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  left: 10%;
+  top: 106px;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.nossa-hist-ria {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.bem-vindo-nerd-hub-sua-loja-de-confian-a-para-produtos-de-alta-qualidade-e-atendimento-excepcional-desde-nossa-funda-o-em-2024-temos-o-compromisso-de-oferecer-uma-experi-ncia-de-compra-nica-e-satisfat-ria-para-nossos-clientes {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.nossa-missao {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  left: 10%;
+  top: 366px;
+}
+
+.nossa-miss-o {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.na-nerd-hub-acreditamos-que-cada-cliente-especial-nossa-equipe-dedicada-trabalha-incansavelmente-para-selecionar-os-melhores-produtos-e-garantir-que-voc-encontre-exatamente-o-que-procura {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.nossos-valores {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 217px;
+  position: absolute;
+  left: 10%;
+  top: 624px;
+}
+
+.nossos-valores2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.informacoes2 {
+  padding: 0px 0px 0px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.item {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 28px;
+  position: relative;
+}
+
+.symbol {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 7.35px;
+  height: 28px;
+}
+
+.transpar-ncia-em-todas-as-nossas-a-es {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  width: 349.68px;
+  height: 28px;
+}
+
+.honestidade-no-relacionamento-com-clientes {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  width: 383.07px;
+  height: 28px;
+}
+
+.excel-ncia-em-produtos-e-servi-os {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  width: 294.9px;
+  height: 28px;
+}
+
+.atendimento-personalizado-e-atencioso {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  width: 336.04px;
+  height: 28px;
+}
+
+.nossa-visao {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  right: 10%;
+  top: 106px;
+}
+
+.nossa-vis-o {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.nosso-objetivo-ser-mais-do-que-apenas-uma-loja-queremos-ser-um-parceiro-em-suas-compras-oferecendo-suporte-e-atendimento-personalizado-explore-nossa-ampla-gama-de-produtos-e-descubra-por-que-a-nerd-hub-a-escolha-certa-para-voc {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.nossa-equipe {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  right: 10%;
+  top: 366px;
+}
+
+.nossa-equipe2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.contamos-com-profissionais-apaixonados-pelo-universo-nerd-e-geek-sempre-prontos-para-ajudar-e-compartilhar-conhecimento-nossa-equipe-formada-por-entusiastas-que-entendem-suas-necessidades-e-prefer-ncias {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.entre-em-contato {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 217px;
+  position: absolute;
+  right: 10%;
+  top: 624px;
+}
+
+.entre-em-contato2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.informacoes3 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.informacoes3 .container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.margin {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.icon, .icon2, .icon3 {
+  color: #ffffff;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+._61-99306-5580, .atendimento-nerdhub-com-br, .seg-a-sex-das-09-h-s-17-h {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+}
+
+.quem-somos {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+}
+
+.linha-separadora {
+  width: 80%;
+  height: 2px;
+  background: #ffffff;
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+}
+
+/* Responsive adjustments for Sobre Nós page */
+@media (max-width: 1200px) {
+  .nossa-historia, .nossa-missao, .nossos-valores {
+    width: 600px;
+    left: 5%;
+  }
+  
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 600px;
+    right: 5%;
+  }
+}
+
+@media (max-width: 992px) {
+  .nossa-historia, .nossa-missao, .nossos-valores,
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 80%;
+    left: 10%;
+    right: auto;
+  }
+  
+  .nossa-historia {
+    top: 80px;
+  }
+  
+  .nossa-missao {
+    top: 320px;
+  }
+  
+  .nossos-valores {
+    top: 560px;
+  }
+  
+  .nossa-visao {
+    top: 800px;
+  }
+  
+  .nossa-equipe {
+    top: 1040px;
+  }
+  
+  .entre-em-contato {
+    top: 1280px;
+  }
+  
+  .back-ground, .main-content, .frame-296 {
+    height: 1500px;
+  }
+  
+  .quem-somos {
+    bottom: 60px;
+  }
+  
+  .linha-separadora {
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nossa-historia, .nossa-missao, .nossos-valores,
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 90%;
+    left: 5%;
+    padding: 16px;
+  }
+  
+  .nossa-historia {
+    top: 60px;
+  }
+  
+  .nossa-missao {
+    top: 280px;
+  }
+  
+  .nossos-valores {
+    top: 500px;
+  }
+  
+  .nossa-visao {
+    top: 720px;
+  }
+  
+  .nossa-equipe {
+    top: 940px;
+  }
+  
+  .entre-em-contato {
+    top: 1160px;
+  }
+  
+  .back-ground, .main-content, .frame-296 {
+    height: 1300px;
+  }
+  
+  .titulo div {
+    font-size: 20px;
+  }
+  
+  .informacoes div, .informacoes2 div, .informacoes3 div {
+    font-size: 16px;
+  }
+  
+  .quem-somos {
+    font-size: 28px;
+    bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nossa-historia, .nossa-missao, .nossos-valores,
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 95%;
+    left: 2.5%;
+    padding: 12px;
+  }
+  
+  .nossa-historia {
+    top: 50px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .nossa-missao {
+    top: 260px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .nossos-valores {
+    top: 470px;
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .nossa-visao {
+    top: 700px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .nossa-equipe {
+    top: 930px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .entre-em-contato {
+    top: 1160px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .back-ground, .main-content, .frame-296 {
+    height: 1350px;
+  }
+  
+  .titulo div {
+    font-size: 18px;
+  }
+  
+  .informacoes div, .informacoes2 div, .informacoes3 div {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  
+  .quem-somos {
+    font-size: 24px;
+    bottom: 50px;
+  }
+  
+  .informacoes3 {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

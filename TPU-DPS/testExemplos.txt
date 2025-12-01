@@ -1,0 +1,843 @@
+sobrenos.html:{
+
+<div class="mainsobrenos">
+
+  <div class="back-ground">
+
+    <img class="fundo-da-pagina" src="fundo-da-pagina0.png" />
+
+  </div>
+
+  <div class="main-content">
+
+    <div class="frame-296">
+
+      <div class="nossa-historia">
+
+        <div class="titulo">
+
+          <div class="nossa-hist-ria">Nossa História</div>
+
+        </div>
+
+        <div class="informacoes">
+
+          <div
+
+            class="bem-vindo-nerd-hub-sua-loja-de-confian-a-para-produtos-de-alta-qualidade-e-atendimento-excepcional-desde-nossa-funda-o-em-2024-temos-o-compromisso-de-oferecer-uma-experi-ncia-de-compra-nica-e-satisfat-ria-para-nossos-clientes"
+
+          >
+
+            Bem-vindo à Nerd Hub, sua loja de confiança para produtos de alta
+
+            qualidade e atendimento
+
+            <br />
+
+            excepcional. Desde nossa fundação em 2024, temos o compromisso de
+
+            oferecer uma experiência de
+
+            <br />
+
+            compra única e satisfatória para nossos clientes.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nossa-missao">
+
+        <div class="titulo">
+
+          <div class="nossa-miss-o">Nossa Missão</div>
+
+        </div>
+
+        <div class="informacoes">
+
+          <div
+
+            class="na-nerd-hub-acreditamos-que-cada-cliente-especial-nossa-equipe-dedicada-trabalha-incansavelmente-para-selecionar-os-melhores-produtos-e-garantir-que-voc-encontre-exatamente-o-que-procura"
+
+          >
+
+            Na Nerd Hub, acreditamos que cada cliente é especial. Nossa equipe
+
+            dedicada trabalha
+
+            <br />
+
+            incansavelmente para selecionar os melhores produtos e garantir que
+
+            você encontre exatamente o que
+
+            <br />
+
+            procura.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nossos-valores">
+
+        <div class="titulo">
+
+          <div class="nossos-valores2">Nossos Valores</div>
+
+        </div>
+
+        <div class="informacoes2">
+
+          <div class="item">
+
+            <div class="symbol">
+
+              <ul class="symbol-span">
+
+                <li></li>
+
+              </ul>
+
+            </div>
+
+            <div class="transpar-ncia-em-todas-as-nossas-a-es">
+
+              Transparência em todas as nossas ações
+
+            </div>
+
+          </div>
+
+          <div class="item">
+
+            <div class="symbol">
+
+              <ul class="symbol-span">
+
+                <li></li>
+
+              </ul>
+
+            </div>
+
+            <div class="honestidade-no-relacionamento-com-clientes">
+
+              Honestidade no relacionamento com clientes
+
+            </div>
+
+          </div>
+
+          <div class="item">
+
+            <div class="symbol">
+
+              <ul class="symbol-span">
+
+                <li></li>
+
+              </ul>
+
+            </div>
+
+            <div class="excel-ncia-em-produtos-e-servi-os">
+
+              Excelência em produtos e serviços
+
+            </div>
+
+          </div>
+
+          <div class="item">
+
+            <div class="symbol">
+
+              <ul class="symbol-span">
+
+                <li></li>
+
+              </ul>
+
+            </div>
+
+            <div class="atendimento-personalizado-e-atencioso">
+
+              Atendimento personalizado e atencioso
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nossa-visao">
+
+        <div class="titulo">
+
+          <div class="nossa-vis-o">Nossa Visão</div>
+
+        </div>
+
+        <div class="informacoes">
+
+          <div
+
+            class="nosso-objetivo-ser-mais-do-que-apenas-uma-loja-queremos-ser-um-parceiro-em-suas-compras-oferecendo-suporte-e-atendimento-personalizado-explore-nossa-ampla-gama-de-produtos-e-descubra-por-que-a-nerd-hub-a-escolha-certa-para-voc"
+
+          >
+
+            Nosso objetivo é ser mais do que apenas uma loja; queremos ser um
+
+            parceiro em suas compras,
+
+            <br />
+
+            oferecendo suporte e atendimento personalizado. Explore nossa ampla
+
+            gama de produtos e descubra
+
+            <br />
+
+            por que a Nerd Hub é a escolha certa para você.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nossa-equipe">
+
+        <div class="titulo">
+
+          <div class="nossa-equipe2">Nossa Equipe</div>
+
+        </div>
+
+        <div class="informacoes">
+
+          <div
+
+            class="contamos-com-profissionais-apaixonados-pelo-universo-nerd-e-geek-sempre-prontos-para-ajudar-e-compartilhar-conhecimento-nossa-equipe-formada-por-entusiastas-que-entendem-suas-necessidades-e-prefer-ncias"
+
+          >
+
+            Contamos com profissionais apaixonados pelo universo nerd e geek,
+
+            sempre prontos para ajudar e
+
+            <br />
+
+            compartilhar conhecimento. Nossa equipe é formada por entusiastas
+
+            que entendem suas necessidades
+
+            <br />
+
+            e preferências.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="entre-em-contato">
+
+        <div class="titulo">
+
+          <div class="entre-em-contato2">Entre em Contato</div>
+
+        </div>
+
+        <div class="informacoes3">
+
+          <div class="container">
+
+            <div class="margin">
+
+              <div class="overlay">
+
+                <div class="container2">
+
+                  <div class="container3">
+
+                    <img class="icon" src="icon0.svg" />
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="container2">
+
+              <div class="_61-99306-5580">(61) 99306-5580</div>
+
+            </div>
+
+          </div>
+
+          <div class="container">
+
+            <div class="margin">
+
+              <div class="overlay">
+
+                <div class="container2">
+
+                  <div class="container3">
+
+                    <img class="icon2" src="icon1.svg" />
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="container2">
+
+              <div class="atendimento-nerdhub-com-br">
+
+                atendimento@nerdhub.com.br
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="container">
+
+            <div class="margin">
+
+              <div class="overlay">
+
+                <div class="container2">
+
+                  <div class="container3">
+
+                    <img class="icon3" src="icon2.svg" />
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="container2">
+
+              <div class="seg-a-sex-das-09-h-s-17-h">
+
+                Seg. a Sex. das 09h às 17h
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="quem-somos">Quem Somos</div>
+
+      <div class="linha-separadora"></div>
+
+    </div>
+
+  </div>
+
+</div>
+}
+
+css:{.mainsobrenos,
+
+.mainsobrenos * {
+
+  box-sizing: border-box;
+
+}
+
+.mainsobrenos {
+
+  position: relative;
+
+}
+
+.back-ground {
+
+  width: 1869px;
+
+  height: 908.92px;
+
+  position: static;
+
+}
+
+.fundo-da-pagina {
+
+  width: 1869px;
+
+  height: 908.92px;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 0px;
+
+  object-fit: cover;
+
+  aspect-ratio: 1869/908.92;
+
+}
+
+.main-content {
+
+  width: 1868px;
+
+  height: 906px;
+
+  position: static;
+
+}
+
+.frame-296 {
+
+  background: linear-gradient(
+
+    180deg,
+
+    rgba(163, 163, 163, 0.35) 0%,
+
+    rgba(0, 0, 0, 0.35) 100%
+
+  );
+
+  width: 1868px;
+
+  height: 906px;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 1.46px;
+
+  overflow: hidden;
+
+}
+
+.nossa-historia {
+
+  background: #529742;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  width: 706px;
+
+  height: 221px;
+
+  position: absolute;
+
+  left: 173px;
+
+  top: 106px;
+
+}
+
+.titulo {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  align-self: stretch;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+}
+
+.nossa-hist-ria {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Bold", sans-serif;
+
+  font-size: 24px;
+
+  line-height: 32px;
+
+  font-weight: 700;
+
+  position: relative;
+
+  align-self: stretch;
+
+}
+
+.informacoes {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  align-self: stretch;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+}
+
+.bem-vindo-nerd-hub-sua-loja-de-confian-a-para-produtos-de-alta-qualidade-e-atendimento-excepcional-desde-nossa-funda-o-em-2024-temos-o-compromisso-de-oferecer-uma-experi-ncia-de-compra-nica-e-satisfat-ria-para-nossos-clientes {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: relative;
+
+  align-self: stretch;
+
+}
+
+.nossa-missao {
+
+  background: #529742;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  width: 706px;
+
+  height: 221px;
+
+  position: absolute;
+
+  left: 173px;
+
+  top: 366px;
+
+}
+
+.nossa-miss-o {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Bold", sans-serif;
+
+  font-size: 24px;
+
+  line-height: 32px;
+
+  font-weight: 700;
+
+  position: relative;
+
+  align-self: stretch;
+
+}
+
+.na-nerd-hub-acreditamos-que-cada-cliente-especial-nossa-equipe-dedicada-trabalha-incansavelmente-para-selecionar-os-melhores-produtos-e-garantir-que-voc-encontre-exatamente-o-que-procura {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: relative;
+
+  align-self: stretch;
+
+}
+
+.nossos-valores {
+
+  background: #529742;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  width: 706px;
+
+  height: 217px;
+
+  position: absolute;
+
+  left: 173px;
+
+  top: 624px;
+
+}
+
+.nossos-valores2 {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Bold", sans-serif;
+
+  font-size: 24px;
+
+  line-height: 32px;
+
+  font-weight: 700;
+
+  position: relative;
+
+  align-self: stretch;
+
+}
+
+.informacoes2 {
+
+  padding: 0px 0px 0px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  align-self: stretch;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+}
+
+.item {
+
+  align-self: stretch;
+
+  flex-shrink: 0;
+
+  height: 28px;
+
+  position: relative;
+
+}
+
+.symbol {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 0px;
+
+  width: 7.35px;
+
+  height: 28px;
+
+}
+
+.transpar-ncia-em-todas-as-nossas-a-es {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 0px;
+
+  width: 349.68px;
+
+  height: 28px;
+
+}
+
+.honestidade-no-relacionamento-com-clientes {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 0px;
+
+  width: 383.07px;
+
+  height: 28px;
+
+}
+
+.excel-ncia-em-produtos-e-servi-os {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 0px;
+
+  width: 294.9px;
+
+  height: 28px;
+
+}
+
+.atendimento-personalizado-e-atencioso {
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-family: "Inter-Regular", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 28px;
+
+  font-weight: 400;
+
+  position: absolute;
+
+  left: 0px;
+
+  top: 0px;
+
+  width: 336.04px;
+
+  height: 28px;
+}
+}
+
+
+suporte.html:{suporte voce pode inventar pq vai ter a pagina de suporte onde vai ser o seguinte (PURO TESTOS E TUTORIAIS) uma pagina para revisar cada problema que o site de e um suporte ao usuario pode deixar ele temporario tipo algo que vamos no final do projeto fazer por completo saca ?}o chat de suporte vai estar no perfil da pessoa e eisso so vamos contruir la pra frente entao n esquenta com issoa agr
