@@ -158,6 +158,7 @@
 
 /* Brands row */
 .marcas-section {
+    align-items: center;
     background: transparent;
     padding: 40px 0;
 }
@@ -165,15 +166,14 @@
 .brand-buttons {
     display: flex;
     gap: 24px;
-    justify-content: flex-start; /* Alinha à esquerda em telas maiores */
+    justify-content: flex-start; /* Alinha ao início */
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 10px 5px;
+    padding: 10px 5px; /* Padding reduzido */
     scrollbar-width: none;
     -ms-overflow-style: none;
-    margin: 0 auto;
-    max-width: var(--container);
-    padding: 10px 16px;
+    margin: 0 auto; /* Centraliza o container */
+    max-width: calc(100vw - 20px); /* Limita a largura para evitar corte */
 }
 
 .brand-buttons::-webkit-scrollbar {
@@ -186,12 +186,12 @@
     min-width: 334px;
     height: 176px;
     border-radius: 25px;
-    background: transparent;
+    background: transparent; /* Remove o fundo branco */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    box-shadow: none;
+    padding: 0; /* Remove o padding */
+    box-shadow: none; /* Remove a sombra */
     border: none;
     transition: transform 0.3s ease;
     flex: 0 0 auto;
@@ -214,12 +214,8 @@
 }
 
 .section-title {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
-    max-width: var(--container);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 16px;
 }
 
 /* Products grid */
@@ -336,67 +332,31 @@
         min-width: 260px;
         height: 140px;
     }
-    
-    .section-title {
-        text-align: center;
-    }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
     .brand-card {
         min-width: 200px;
         height: 110px;
     }
-    
-    .brand-buttons {
-        justify-content: center; /* Centraliza em telas menores */
-        padding: 10px 10px;
-    }
-    
-    .section-title {
-        text-align: center;
-    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 520px) {
     .brand-buttons {
         gap: 16px;
-        padding: 10px 5px;
-        justify-content: center;
+        padding: 10px 2px;
+        max-width: calc(100vw - 4px); /* Ajusta para telas pequenas */
     }
 
     .brand-card {
         min-width: 180px;
         height: 100px;
     }
-    
-    .section-title {
-        text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .brand-buttons {
-        gap: 12px;
-        padding: 10px 2px;
-        justify-content: center;
-    }
-
-    .brand-card {
-        min-width: 160px;
-        height: 90px;
-    }
-    
-    .section-title {
-        text-align: center;
-        padding: 0 12px;
-    }
 }
 
 @media (max-width: 400px) {
     .brand-buttons {
         gap: 12px;
-        justify-content: flex-start;
         padding: 10px 1px;
         max-width: calc(100vw - 2px);
     }
