@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Administrativo</title>
+
+    <style>
+        body { margin:0; background:#f3f3f3; font-family:sans-serif; }
+
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Painel</h2>
+
+    <a href="{% url 'painel:dashboard' %}">Dashboard</a>
+    <a href="{% url 'painel:produtos_list' %}">Produtos</a>
+    <a href="{% url 'painel:usuarios_list' %}">Usuários</a>
+    <a href="{% url 'painel:pedidos_list' %}">Pedidos</a>
+</div>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
