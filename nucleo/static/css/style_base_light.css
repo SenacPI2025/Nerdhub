@@ -669,7 +669,7 @@ footer {
     rgba(0, 0, 0, 0.35) 100%
   );
   width: 100%;
-  height: 906px;
+  height: 1000px; /* Aumentando a altura para acomodar todo o conteúdo */
   position: relative;
   overflow: hidden;
 }
@@ -977,7 +977,7 @@ footer {
   height: 217px;
   position: absolute;
   right: 10%;
-  top: 624px;
+  top: 860px; /* Movendo para baixo para não sobrepor outras seções */
 }
 
 .entre-em-contato2 {
@@ -1079,7 +1079,7 @@ footer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 30px;
+  top: 30px; /* Movendo para o topo */
 }
 
 .linha-separadora {
@@ -1088,7 +1088,7 @@ footer {
   background: #ffffff;
   position: absolute;
   left: 10%;
-  bottom: 20px;
+  top: 80px; /* Ajustando posição abaixo do título */
 }
 
 /* Responsive adjustments for Sobre Nós page */

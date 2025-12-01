@@ -840,4 +840,3 @@ css:{.mainsobrenos,
 }
 
 
-suporte.html:{suporte voce pode inventar pq vai ter a pagina de suporte onde vai ser o seguinte (PURO TESTOS E TUTORIAIS) uma pagina para revisar cada problema que o site de e um suporte ao usuario pode deixar ele temporario tipo algo que vamos no final do projeto fazer por completo saca ?}o chat de suporte vai estar no perfil da pessoa e eisso so vamos contruir la pra frente entao n esquenta com issoa agr
