@@ -786,7 +786,7 @@ footer {
   width: 706px;
   height: 217px;
   position: absolute;
-  left: 10%;
+  right: 10%;
   top: 624px;
 }
 
@@ -979,7 +979,7 @@ footer {
   height: 217px;
   position: absolute;
   right: 10%;
-  top: 624px;
+  top: 860px; /* Posição ajustada para ficar após Nossos Valores */
 }
 
 .entre-em-contato2 {
