@@ -166,7 +166,7 @@
 .brand-buttons {
     display: flex;
     gap: 24px;
-    justify-content: center; /* Alinha ao início */
+    justify-content: center; /* Alinha ao centro */
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 10px 5px; /* Padding reduzido */
@@ -345,6 +345,7 @@
     .brand-buttons {
         gap: 16px;
         padding: 10px 2px;
+        justify-content: flex-start;
         max-width: calc(100vw - 4px); /* Ajusta para telas pequenas */
     }
 
@@ -357,6 +358,7 @@
 @media (max-width: 400px) {
     .brand-buttons {
         gap: 12px;
+        justify-content: flex-start;
         padding: 10px 1px;
         max-width: calc(100vw - 2px);
     }
