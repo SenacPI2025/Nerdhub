@@ -7,4 +7,4 @@ def is_staff(user):
 @login_required
 @user_passes_test(is_staff)
 def index(request):
-    return render(request, 'dashboard/index.html')
+    return render(request, 'dashboard/index.html', {'page_name': 'dashboard'})
