@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
+
+def is_admin(user):
+    return user.is_superuser or user.is_staff
 
 def login_painel(request):
     if request.method == 'POST':
@@ -19,6 +22,7 @@ def login_painel(request):
 
 
 @login_required
+@user_passes_test(is_admin)
 def dashboard(request):
     return render(request, 'painel/dashboard.html')
 

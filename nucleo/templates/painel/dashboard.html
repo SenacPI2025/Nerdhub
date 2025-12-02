@@ -1,7 +1,6 @@
-{% extends 'painel/base_painel.html' %}
+{% extends "painel/base_painel.html" %}
 
-{% block content %}
+{% block conteudo %}
 <h1>Dashboard</h1>
-
-<p>Bem-vindo ao painel administrativo.</p>
+<p>Bem-vindo, {{ request.user.username }}!</p>
 {% endblock %}

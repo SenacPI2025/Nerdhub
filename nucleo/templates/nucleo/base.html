@@ -56,13 +56,13 @@
                                     <div class="user-menu">
                                         <a href="#">Olá, {{ user.username }} ▼</a>
                                         <div class="user-menu-content">
-                                            <a href="#">Meu Perfil</a>
+                                            <a href="{% url 'painel:dashboard' %}">Meu Perfil</a>
                                             <a href="#">Meus Endereços</a>
                                             <a href="#">Sair</a>
                                         </div>
                                     </div>
                                     {% else %}
-                                    <a href="#">Entrar</a>
+                                    <a href="{% url 'painel:login' %}">Entrar</a>
                                     {% endif %}
                                 </div>
                             </div>
