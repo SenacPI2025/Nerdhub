@@ -309,7 +309,7 @@ Você: bem foi
                                                                                 Username (leave blank to use
                                                                                 'danilo54279466'): Danilo
                                                                                 Email address: Wolfdangalaxy2@gmail.com
-                                                                                Password:
+                                                                                Passwo:
                                                                                 Password (again):
                                                                                 This password is too short. It must
                                                                                 contain at least 8 characters.
@@ -476,7 +476,6 @@ Você: bem foi
                                                                                 o que e um gh?
 
                                                                                 6. ja fiz tbm e coloquei tbm a chave
-                                                                                :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
                                                                                 se n for isso me xplica qual chave eu
                                                                                 tenho que colocar la
 
@@ -631,9 +630,7 @@ Você: bem foi
                                                                                 'django.db.models.BigAutoField'
                                                                                 }
 
-                                                                                .env:{DJANGO_SECRET_KEY=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
-                                                                                DJANGO_DEBUG=1
-                                                                                DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost}
+                              
 
                                                                                 coloquei o Procfile e rodei o codigo no
                                                                                 terminal
