@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-secret-key-123")
 
 DEBUG = os.getenv("DEBUG", "") != "false"
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,nerdhub.up.railway.app").split(",")
 
 
 # Application definition
@@ -55,6 +56,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'nerdhub.urls'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://nerdhub.up.railway.app",
+    "https://*.railway.app",
+]
+
 
 TEMPLATES = [
     {

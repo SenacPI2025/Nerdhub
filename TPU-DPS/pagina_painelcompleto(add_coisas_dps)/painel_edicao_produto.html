@@ -6,7 +6,7 @@
     <script src="https://static.readdy.ai/static/e.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Administrativo - NerdHub</title>
+    <title>Editar Produto - Notebook Gamer RTX 4060 - NerdHub</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config = { theme: { extend: { colors: { primary: '#55A143', secondary: '#242424' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
         :where([class^="ri-"])::before {
             content: "\f3c2";
@@ -33,6 +32,66 @@
 
         .sidebar-item.active {
             background-color: #55A143;
+        }
+
+        .toggle-switch {
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background-color: #55A143;
+        }
+
+        .toggle-switch.active .toggle-circle {
+            transform: translateX(1.5rem);
+        }
+
+        .file-upload-area {
+            border: 2px dashed #4A4A4A;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-area.dragover {
+            border-color: #55A143;
+            background-color: rgba(85, 161, 67, 0.1);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+
+        input[type="range"]::-webkit-slider-track {
+            background: #2A2A2A;
+            height: 6px;
+            border-radius: 3px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #55A143;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-track {
+            background: #2A2A2A;
+            height: 6px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #55A143;
+            cursor: pointer;
+            border: none;
         }
     </style>
     <style>
@@ -405,6 +464,10 @@
             left: 0px
         }
 
+        .left-0\.5 {
+            left: 0.125rem
+        }
+
         .left-3 {
             left: 0.75rem
         }
@@ -413,20 +476,45 @@
             top: 0px
         }
 
+        .top-0\.5 {
+            top: 0.125rem
+        }
+
         .top-1\/2 {
             top: 50%
+        }
+
+        .top-full {
+            top: 100%
         }
 
         .z-10 {
             z-index: 10
         }
 
-        .mb-4 {
-            margin-bottom: 1rem
+        .z-20 {
+            z-index: 20
         }
 
-        .mb-8 {
-            margin-bottom: 2rem
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
         }
 
         .ml-64 {
@@ -437,12 +525,16 @@
             margin-right: 0.75rem
         }
 
-        .mt-2 {
-            margin-top: 0.5rem
+        .mt-1 {
+            margin-top: 0.25rem
         }
 
         .mt-6 {
             margin-top: 1.5rem
+        }
+
+        .block {
+            display: block
         }
 
         .flex {
@@ -453,12 +545,16 @@
             display: grid
         }
 
-        .h-10 {
-            height: 2.5rem
+        .hidden {
+            display: none
         }
 
         .h-12 {
             height: 3rem
+        }
+
+        .h-32 {
+            height: 8rem
         }
 
         .h-4 {
@@ -467,6 +563,10 @@
 
         .h-5 {
             height: 1.25rem
+        }
+
+        .h-6 {
+            height: 1.5rem
         }
 
         .h-8 {
@@ -481,12 +581,12 @@
             min-height: 100vh
         }
 
-        .w-10 {
-            width: 2.5rem
-        }
-
         .w-12 {
             width: 3rem
+        }
+
+        .w-32 {
+            width: 8rem
         }
 
         .w-4 {
@@ -514,8 +614,21 @@
             transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
         }
 
+        .translate-x-6 {
+            --tw-translate-x: 1.5rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
         .transform {
             transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        .resize-none {
+            resize: none
         }
 
         .grid-cols-1 {
@@ -524,6 +637,10 @@
 
         .items-center {
             align-items: center
+        }
+
+        .justify-end {
+            justify-content: flex-end
         }
 
         .justify-center {
@@ -538,12 +655,6 @@
             gap: 1.5rem
         }
 
-        .space-x-2> :not([hidden])~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
-        }
-
         .space-x-3> :not([hidden])~ :not([hidden]) {
             --tw-space-x-reverse: 0;
             margin-right: calc(0.75rem * var(--tw-space-x-reverse));
@@ -554,12 +665,6 @@
             --tw-space-x-reverse: 0;
             margin-right: calc(1rem * var(--tw-space-x-reverse));
             margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
-        }
-
-        .space-y-3> :not([hidden])~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
         }
 
         .space-y-4> :not([hidden])~ :not([hidden]) {
@@ -574,8 +679,16 @@
             margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
         }
 
-        .overflow-x-auto {
-            overflow-x: auto
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .whitespace-nowrap {
+            white-space: nowrap
+        }
+
+        .\!rounded-button {
+            border-radius: 8px !important
         }
 
         .rounded-full {
@@ -584,10 +697,6 @@
 
         .rounded-lg {
             border-radius: 16px
-        }
-
-        .rounded-md {
-            border-radius: 12px
         }
 
         .border {
@@ -612,14 +721,9 @@
             border-color: rgb(55 65 81 / var(--tw-border-opacity, 1))
         }
 
-        .border-red-500 {
-            --tw-border-opacity: 1;
-            border-color: rgb(239 68 68 / var(--tw-border-opacity, 1))
-        }
-
-        .border-yellow-500 {
-            --tw-border-opacity: 1;
-            border-color: rgb(234 179 8 / var(--tw-border-opacity, 1))
+        .bg-gray-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
         }
 
         .bg-\[\#1F1F1F\] {
@@ -632,19 +736,14 @@
             background-color: rgb(36 36 36 / var(--tw-bg-opacity, 1))
         }
 
+        .bg-\[\#2A2A2A\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(42 42 42 / var(--tw-bg-opacity, 1))
+        }
+
         .bg-\[\#3B3B3B\] {
             --tw-bg-opacity: 1;
             background-color: rgb(59 59 59 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-blue-500 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-gray-100 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
         }
 
         .bg-gray-600 {
@@ -652,46 +751,34 @@
             background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
         }
 
-        .bg-green-500 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-orange-500 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1))
-        }
-
         .bg-primary {
             --tw-bg-opacity: 1;
             background-color: rgb(85 161 67 / var(--tw-bg-opacity, 1))
         }
 
-        .bg-red-500 {
+        .bg-white {
             --tw-bg-opacity: 1;
-            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
         }
 
-        .bg-yellow-500 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        .object-cover {
+            object-fit: cover
         }
 
-        .bg-opacity-20 {
-            --tw-bg-opacity: 0.2
+        .object-top {
+            object-position: top
         }
 
-        .p-3 {
-            padding: 0.75rem
+        .p-2 {
+            padding: 0.5rem
+        }
+
+        .p-4 {
+            padding: 1rem
         }
 
         .p-6 {
             padding: 1.5rem
-        }
-
-        .px-2 {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem
         }
 
         .px-4 {
@@ -732,6 +819,10 @@
             text-align: left
         }
 
+        .text-center {
+            text-align: center
+        }
+
         .font-\[\'Pacifico\'\] {
             font-family: 'Pacifico'
         }
@@ -739,11 +830,6 @@
         .text-2xl {
             font-size: 1.5rem;
             line-height: 2rem
-        }
-
-        .text-3xl {
-            font-size: 1.875rem;
-            line-height: 2.25rem
         }
 
         .text-lg {
@@ -764,10 +850,6 @@
         .text-xs {
             font-size: 0.75rem;
             line-height: 1rem
-        }
-
-        .font-bold {
-            font-weight: 700
         }
 
         .font-medium {
@@ -793,35 +875,40 @@
             color: rgb(85 161 67 / var(--tw-text-opacity, 1))
         }
 
-        .text-red-300 {
-            --tw-text-opacity: 1;
-            color: rgb(252 165 165 / var(--tw-text-opacity, 1))
-        }
-
-        .text-red-500 {
-            --tw-text-opacity: 1;
-            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
-        }
-
         .text-white {
             --tw-text-opacity: 1;
             color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-        }
-
-        .text-yellow-300 {
-            --tw-text-opacity: 1;
-            color: rgb(253 224 71 / var(--tw-text-opacity, 1))
-        }
-
-        .text-yellow-500 {
-            --tw-text-opacity: 1;
-            color: rgb(234 179 8 / var(--tw-text-opacity, 1))
         }
 
         .shadow-lg {
             --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
             box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .duration-300 {
+            transition-duration: 300ms
+        }
+
+        .hover\:bg-\[\#3B3B3B\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(59 59 59 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-\[\#4A4A4A\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(74 74 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
         }
 
         .hover\:text-white:hover {
@@ -859,10 +946,6 @@
             .lg\:grid-cols-3 {
                 grid-template-columns: repeat(3, minmax(0, 1fr))
             }
-
-            .lg\:grid-cols-4 {
-                grid-template-columns: repeat(4, minmax(0, 1fr))
-            }
         }
     </style>
     <link type="image/png" rel="icon" href="https://public.readdy.ai/gen_page/readdy-logo.png">
@@ -870,20 +953,20 @@
 </head>
 
 <body class="bg-gray-100 min-h-screen">
-    <!-- Sidebar -->
     <div class="fixed left-0 top-0 h-full w-64 bg-[#1F1F1F] text-white z-10">
         <div class="p-6 border-b border-gray-700">
             <h1 class="text-2xl font-['Pacifico'] text-primary">NerdHub</h1>
         </div>
         <nav class="mt-6">
-            <a href="#" class="sidebar-item active flex items-center px-6 py-3 text-sm font-medium">
+            <a href="https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/3609e822-4328-4ad2-a5af-84eb6909652a"
+                data-readdy="true"
+                class="sidebar-item flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
                 <div class="w-5 h-5 flex items-center justify-center mr-3">
                     <i class="ri-dashboard-line"></i>
                 </div>
                 Dashboard
             </a>
-            <a href="https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/8a58df1c-3174-42f7-859f-f2d6ecb735e1"
-                data-readdy="true"
+            <a href="#"
                 class="sidebar-item flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
                 <div class="w-5 h-5 flex items-center justify-center mr-3">
                     <i class="ri-user-line"></i>
@@ -891,8 +974,7 @@
                 Usuários
             </a>
             <a href="https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/954d599c-5413-4ec7-bb66-baefc75e2c07"
-                data-readdy="true"
-                class="sidebar-item flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
+                data-readdy="true" class="sidebar-item active flex items-center px-6 py-3 text-sm font-medium">
                 <div class="w-5 h-5 flex items-center justify-center mr-3">
                     <i class="ri-shopping-bag-line"></i>
                 </div>
@@ -912,7 +994,8 @@
                 </div>
                 Relatórios
             </a>
-            <a href="#"
+            <a href="https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/73310965-dec4-4c75-a910-afb751ea7dd4"
+                data-readdy="true"
                 class="sidebar-item flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
                 <div class="w-5 h-5 flex items-center justify-center mr-3">
                     <i class="ri-settings-line"></i>
@@ -921,11 +1004,18 @@
             </a>
         </nav>
     </div>
-    <!-- Main Content -->
     <div class="ml-64">
-        <!-- Header -->
         <header class="bg-[#242424] text-white px-6 py-4 flex items-center justify-between">
-            <h2 class="text-xl font-semibold">Dashboard Administrativo</h2>
+            <div class="flex items-center space-x-4">
+                <a href="https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/954d599c-5413-4ec7-bb66-baefc75e2c07"
+                    data-readdy="true"
+                    class="bg-[#3B3B3B] hover:bg-[#4A4A4A] text-white p-2 rounded-lg !rounded-button">
+                    <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                </a>
+                <h2 class="text-xl font-semibold">Editar Produto - Notebook Gamer RTX 4060</h2>
+            </div>
             <div class="flex items-center space-x-4">
                 <div class="relative">
                     <input type="text" placeholder="Buscar..."
@@ -943,338 +1033,234 @@
                 </div>
             </div>
         </header>
-        <!-- Dashboard Content -->
         <main class="p-6">
-            <!-- Metrics Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-[#3B3B3B] text-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-300 text-sm">Total de Usuários</p>
-                            <p class="text-3xl font-bold mt-2">2.847</p>
-                        </div>
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                            <i class="ri-user-line text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-[#3B3B3B] text-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-300 text-sm">Total de Pedidos</p>
-                            <p class="text-3xl font-bold mt-2">1.234</p>
-                        </div>
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                            <i class="ri-shopping-cart-line text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-[#3B3B3B] text-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-300 text-sm">Total de Produtos</p>
-                            <p class="text-3xl font-bold mt-2">567</p>
-                        </div>
-                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                            <i class="ri-shopping-bag-line text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-[#3B3B3B] text-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-300 text-sm">Vendas do Mês</p>
-                            <p class="text-3xl font-bold mt-2">R$ 89.340</p>
-                        </div>
-                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                            <i class="ri-money-dollar-circle-line text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Chart -->
-            <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6 mb-8">
-                <h3 class="text-white text-lg font-semibold mb-4">Vendas dos Últimos 6 Meses</h3>
-                <div id="salesChart"
-                    style="height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"
-                    _echarts_instance_="ec_1764617799610">
-                    <div
-                        style="position: relative; width: 693px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
-                        <canvas data-zr-dom-id="zr_0" width="693" height="300"
-                            style="position: absolute; left: 0px; top: 0px; width: 693px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
-                    </div>
-                    <div class=""
-                        style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(255, 255, 255, 0.9); border-width: 1px; border-radius: 4px; color: rgb(31, 41, 55); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(481px, 43px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;">
-                        <div style="margin: 0px 0 0;line-height:1;">
-                            <div style="margin: 0px 0 0;line-height:1;">
-                                <div style="font-size:14px;color:#1f2937;font-weight:400;line-height:1;">Dez</div>
-                                <div style="margin: 10px 0 0;line-height:1;">
-                                    <div style="margin: 0px 0 0;line-height:1;">
-                                        <div style="margin: 0px 0 0;line-height:1;"><span
-                                                style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#5470c6;"></span><span
-                                                style="float:right;margin-left:10px;font-size:14px;color:#1f2937;font-weight:900">89,000</span>
-                                            <div style="clear:both"></div>
+            <form class="space-y-6">
+                <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-white text-sm font-medium mb-2">Nome do Produto *</label>
+                                    <input type="text" id="productName" value="Notebook Gamer RTX 4060"
+                                        class="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-white text-sm font-medium mb-2">Categoria *</label>
+                                    <div class="relative">
+                                        <button type="button" id="categorySelect"
+                                            class="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm flex items-center justify-between !rounded-button">
+                                            <span>Notebooks</span>
+                                            <div class="w-4 h-4 flex items-center justify-center">
+                                                <i class="ri-arrow-down-s-line"></i>
+                                            </div>
+                                        </button>
+                                        <div id="categoryDropdown"
+                                            class="absolute top-full left-0 mt-1 w-full bg-[#2A2A2A] border border-gray-600 rounded-lg shadow-lg z-20 hidden">
+                                            <div class="py-1">
+                                                <button type="button"
+                                                    class="category-option w-full text-left px-4 py-2 text-sm text-white hover:bg-[#3B3B3B]"
+                                                    data-value="notebooks">Notebooks</button>
+                                                <button type="button"
+                                                    class="category-option w-full text-left px-4 py-2 text-sm text-white hover:bg-[#3B3B3B]"
+                                                    data-value="perifericos">Periféricos</button>
+                                                <button type="button"
+                                                    class="category-option w-full text-left px-4 py-2 text-sm text-white hover:bg-[#3B3B3B]"
+                                                    data-value="componentes">Componentes</button>
+                                                <button type="button"
+                                                    class="category-option w-full text-left px-4 py-2 text-sm text-white hover:bg-[#3B3B3B]"
+                                                    data-value="acessorios">Acessórios</button>
+                                            </div>
                                         </div>
-                                        <div style="clear:both"></div>
                                     </div>
-                                    <div style="clear:both"></div>
                                 </div>
-                                <div style="clear:both"></div>
+                                <div>
+                                    <label class="block text-white text-sm font-medium mb-2">Preço (R$) *</label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">R$</span>
+                                        <input type="number" id="productPrice" value="4299.00" step="0.01"
+                                            class="w-full bg-[#2A2A2A] text-white px-4 py-3 pl-10 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-white text-sm font-medium mb-2">Estoque *</label>
+                                    <input type="number" id="productStock" value="7" min="0"
+                                        class="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                                </div>
                             </div>
-                            <div style="clear:both"></div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">Descrição *</label>
+                                <textarea id="productDescription" rows="4"
+                                    class="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm resize-none">Notebook gamer de alta performance com processador Intel Core i7 de 12ª geração, placa de vídeo RTX 4060, 16GB de RAM DDR5 e SSD NVMe de 512GB. Ideal para jogos, streaming e trabalho profissional. Tela de 15.6 polegadas Full HD com taxa de atualização de 144Hz para uma experiência de jogo fluida e imersiva.</textarea>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="block text-white text-sm font-medium mb-2">Status do Produto</label>
+                                    <p class="text-gray-400 text-xs">Defina se o produto está ativo ou inativo no
+                                        sistema</p>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-gray-400 text-sm">Inativo</span>
+                                    <button type="button" id="statusToggle"
+                                        class="toggle-switch active w-12 h-6 bg-primary rounded-full relative cursor-pointer">
+                                        <div
+                                            class="toggle-circle w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5 transition-transform duration-300 transform translate-x-6">
+                                        </div>
+                                    </button>
+                                    <span class="text-white text-sm">Ativo</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Orders and Products Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Recent Orders -->
-                <div class="lg:col-span-2 bg-[#3B3B3B] rounded-lg shadow-lg p-6">
-                    <h3 class="text-white text-lg font-semibold mb-4">Últimos Pedidos</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-white text-sm">
-                            <thead>
-                                <tr class="border-b border-gray-600">
-                                    <th class="text-left py-3 px-2">ID</th>
-                                    <th class="text-left py-3 px-2">Cliente</th>
-                                    <th class="text-left py-3 px-2">Produto</th>
-                                    <th class="text-left py-3 px-2">Valor</th>
-                                    <th class="text-left py-3 px-2">Status</th>
-                                    <th class="text-left py-3 px-2">Data</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-gray-700">
-                                    <td class="py-3 px-2">#1001</td>
-                                    <td class="py-3 px-2">Maria Silva</td>
-                                    <td class="py-3 px-2">Notebook Gamer</td>
-                                    <td class="py-3 px-2">R$ 3.499</td>
-                                    <td class="py-3 px-2">
-                                        <span
-                                            class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">Entregue</span>
-                                    </td>
-                                    <td class="py-3 px-2">01/12/2025</td>
-                                </tr>
-                                <tr class="border-b border-gray-700">
-                                    <td class="py-3 px-2">#1002</td>
-                                    <td class="py-3 px-2">João Santos</td>
-                                    <td class="py-3 px-2">Mouse RGB</td>
-                                    <td class="py-3 px-2">R$ 149</td>
-                                    <td class="py-3 px-2">
-                                        <span
-                                            class="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">Processando</span>
-                                    </td>
-                                    <td class="py-3 px-2">01/12/2025</td>
-                                </tr>
-                                <tr class="border-b border-gray-700">
-                                    <td class="py-3 px-2">#1003</td>
-                                    <td class="py-3 px-2">Ana Costa</td>
-                                    <td class="py-3 px-2">Teclado Mecânico</td>
-                                    <td class="py-3 px-2">R$ 299</td>
-                                    <td class="py-3 px-2">
-                                        <span
-                                            class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Enviado</span>
-                                    </td>
-                                    <td class="py-3 px-2">30/11/2025</td>
-                                </tr>
-                                <tr class="border-b border-gray-700">
-                                    <td class="py-3 px-2">#1004</td>
-                                    <td class="py-3 px-2">Pedro Lima</td>
-                                    <td class="py-3 px-2">Headset Gamer</td>
-                                    <td class="py-3 px-2">R$ 199</td>
-                                    <td class="py-3 px-2">
-                                        <span
-                                            class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">Entregue</span>
-                                    </td>
-                                    <td class="py-3 px-2">30/11/2025</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 px-2">#1005</td>
-                                    <td class="py-3 px-2">Carla Mendes</td>
-                                    <td class="py-3 px-2">Monitor 4K</td>
-                                    <td class="py-3 px-2">R$ 1.299</td>
-                                    <td class="py-3 px-2">
-                                        <span
-                                            class="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">Processando</span>
-                                    </td>
-                                    <td class="py-3 px-2">29/11/2025</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Products and Alerts -->
-                <div class="space-y-6">
-                    <!-- Top Products -->
-                    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
-                        <h3 class="text-white text-lg font-semibold mb-4">Produtos Mais Vendidos</h3>
                         <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-gray-600 rounded-md flex items-center justify-center">
-                                        <i class="ri-computer-line text-white"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-white text-sm font-medium">Notebook Gamer</p>
-                                        <p class="text-gray-400 text-xs">127 vendas</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-gray-600 rounded-md flex items-center justify-center">
-                                        <i class="ri-mouse-line text-white"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-white text-sm font-medium">Mouse RGB</p>
-                                        <p class="text-gray-400 text-xs">89 vendas</p>
+                            <h3 class="text-white text-lg font-semibold">Imagem do Produto</h3>
+                            <div class="bg-[#2A2A2A] rounded-lg p-4">
+                                <div class="mb-4">
+                                    <label class="block text-white text-sm font-medium mb-2">Imagem Atual</label>
+                                    <div class="w-32 h-32 bg-gray-600 rounded-lg overflow-hidden">
+                                        <img id="currentImage"
+                                            src="https://readdy.ai/api/search-image?query=gaming%20laptop%20computer%20on%20white%20background%20product%20photography%20clean%20minimal%20style&amp;width=200&amp;height=200&amp;seq=1&amp;orientation=squarish"
+                                            alt="Notebook Gamer RTX 4060" class="w-full h-full object-cover object-top">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-gray-600 rounded-md flex items-center justify-center">
-                                        <i class="ri-keyboard-line text-white"></i>
+                                <div class="file-upload-area rounded-lg p-6 text-center cursor-pointer" id="uploadArea">
+                                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center text-gray-400">
+                                        <i class="ri-upload-cloud-2-line text-2xl"></i>
                                     </div>
-                                    <div>
-                                        <p class="text-white text-sm font-medium">Teclado Mecânico</p>
-                                        <p class="text-gray-400 text-xs">76 vendas</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stock Alerts -->
-                    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
-                        <h3 class="text-white text-lg font-semibold mb-4">Alertas de Estoque Baixo</h3>
-                        <div class="space-y-3">
-                            <div class="bg-red-500 bg-opacity-20 border border-red-500 rounded-lg p-3">
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-4 h-4 flex items-center justify-center">
-                                        <i class="ri-error-warning-line text-red-500"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-white text-sm font-medium">Webcam HD</p>
-                                        <p class="text-red-300 text-xs">Apenas 3 unidades</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-red-500 bg-opacity-20 border border-red-500 rounded-lg p-3">
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-4 h-4 flex items-center justify-center">
-                                        <i class="ri-error-warning-line text-red-500"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-white text-sm font-medium">Cabo USB-C</p>
-                                        <p class="text-red-300 text-xs">Apenas 5 unidades</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-yellow-500 bg-opacity-20 border border-yellow-500 rounded-lg p-3">
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-4 h-4 flex items-center justify-center">
-                                        <i class="ri-error-warning-line text-yellow-500"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-white text-sm font-medium">SSD 1TB</p>
-                                        <p class="text-yellow-300 text-xs">Apenas 8 unidades</p>
-                                    </div>
+                                    <p class="text-white text-sm font-medium mb-1">Clique para selecionar ou arraste uma
+                                        imagem</p>
+                                    <p class="text-gray-400 text-xs">PNG, JPG até 10MB</p>
+                                    <input type="file" id="imageUpload" accept="image/*" class="hidden">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="flex justify-end space-x-4">
+                    <a href="https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/954d599c-5413-4ec7-bb66-baefc75e2c07"
+                        data-readdy="true"
+                        class="bg-[#3B3B3B] hover:bg-[#4A4A4A] text-white px-6 py-3 rounded-lg font-medium !rounded-button whitespace-nowrap">
+                        Cancelar
+                    </a>
+                    <button type="submit"
+                        class="bg-primary hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium !rounded-button whitespace-nowrap">
+                        Salvar Alterações
+                    </button>
+                </div>
+            </form>
         </main>
     </div>
     <script type="text/javascript" crossorigin="anonymous"
-        src="https://us-assets.i.posthog.com/static/surveys.js?v=1.297.0"></script>
+        src="https://us-assets.i.posthog.com/static/surveys.js?v=1.302.2"></script>
     <script type="text/javascript" crossorigin="anonymous"
         src="https://us-assets.i.posthog.com/array/phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd/config.js"></script>
     <script type="text/javascript" crossorigin="anonymous"
-        src="https://us-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.297.0"></script>
-    <script id="chart-script">
+        src="https://us-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.302.2"></script>
+    <script id="category-dropdown-script">
         document.addEventListener('DOMContentLoaded', function () {
-            const chartDom = document.getElementById('salesChart');
-            const myChart = echarts.init(chartDom);
-            const option = {
-                animation: false,
-                grid: {
-                    left: 0,
-                    right: 0,
-                    top: 20,
-                    bottom: 0,
-                    containLabel: true
-                },
-                xAxis: {
-                    type: 'category',
-                    data: ['Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-                    axisLine: {
-                        lineStyle: {
-                            color: '#666'
-                        }
-                    },
-                    axisLabel: {
-                        color: '#999'
-                    }
-                },
-                yAxis: {
-                    type: 'value',
-                    axisLine: {
-                        lineStyle: {
-                            color: '#666'
-                        }
-                    },
-                    axisLabel: {
-                        color: '#999'
-                    },
-                    splitLine: {
-                        lineStyle: {
-                            color: '#444'
-                        }
-                    }
-                },
-                series: [{
-                    data: [45000, 52000, 48000, 61000, 73000, 89000],
-                    type: 'line',
-                    smooth: true,
-                    symbol: 'none',
-                    lineStyle: {
-                        color: '#55A143',
-                        width: 3
-                    },
-                    areaStyle: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0,
-                                color: 'rgba(85, 161, 67, 0.3)'
-                            }, {
-                                offset: 1,
-                                color: 'rgba(85, 161, 67, 0.05)'
-                            }]
-                        }
-                    }
-                }],
-                tooltip: {
-                    trigger: 'axis',
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    textStyle: {
-                        color: '#1f2937'
-                    }
-                }
-            };
-            myChart.setOption(option);
-            window.addEventListener('resize', function () {
-                myChart.resize();
+            const categorySelect = document.getElementById('categorySelect');
+            const categoryDropdown = document.getElementById('categoryDropdown');
+            const categoryOptions = document.querySelectorAll('.category-option');
+            categorySelect.addEventListener('click', function (e) {
+                e.stopPropagation();
+                categoryDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', function () {
+                categoryDropdown.classList.add('hidden');
+            });
+            categoryOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    const value = this.getAttribute('data-value');
+                    const text = this.textContent;
+                    categorySelect.querySelector('span').textContent = text;
+                    categoryDropdown.classList.add('hidden');
+                });
             });
         });
     </script>
-    <script id="mobile-menu-script">
+    <script id="status-toggle-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const statusToggle = document.getElementById('statusToggle');
+            const toggleCircle = statusToggle.querySelector('.toggle-circle');
+            let isActive = true;
+            statusToggle.addEventListener('click', function () {
+                isActive = !isActive;
+                if (isActive) {
+                    statusToggle.classList.add('active');
+                    statusToggle.style.backgroundColor = '#55A143';
+                    toggleCircle.style.transform = 'translateX(1.5rem)';
+                } else {
+                    statusToggle.classList.remove('active');
+                    statusToggle.style.backgroundColor = '#4A4A4A';
+                    toggleCircle.style.transform = 'translateX(0)';
+                }
+            });
+        });
+    </script>
+    <script id="file-upload-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const uploadArea = document.getElementById('uploadArea');
+            const imageUpload = document.getElementById('imageUpload');
+            const currentImage = document.getElementById('currentImage');
+            uploadArea.addEventListener('click', function () {
+                imageUpload.click();
+            });
+            uploadArea.addEventListener('dragover', function (e) {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            uploadArea.addEventListener('dragleave', function () {
+                uploadArea.classList.remove('dragover');
+            });
+            uploadArea.addEventListener('drop', function (e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileUpload(files[0]);
+                }
+            });
+            imageUpload.addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    handleFileUpload(this.files[0]);
+                }
+            });
+            function handleFileUpload(file) {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        currentImage.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+    </script>
+    <script id="form-validation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const requiredFields = ['productName', 'productPrice', 'productStock', 'productDescription'];
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let isValid = true;
+                requiredFields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    const value = field.value.trim();
+                    if (!value) {
+                        field.style.borderColor = '#ef4444';
+                        field.style.boxShadow = '0 0 0 2px rgba(239, 68, 68, 0.2)';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '';
+                        field.style.boxShadow = '';
+                    }
+                });
+                if (isValid) {
+                    window.location.href = 'https://readdy.ai/home/93a7c176-4148-4798-a247-b2367c0bf5c6/954d599c-5413-4ec7-bb66-baefc75e2c07';
+                }
+            });
+        });
+    </script>
+    <script id="mobile-responsive-script">
         document.addEventListener('DOMContentLoaded', function () {
             const sidebar = document.querySelector('.fixed.left-0');
             const mainContent = document.querySelector('.ml-64');
