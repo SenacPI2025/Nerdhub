@@ -1,0 +1,174 @@
+{% extends 'painel/base_painel.html' %}
+
+{% block title %}
+{% if modo == 'novo' %}
+Novo Produto - Painel NerdHub
+{% else %}
+Editar Produto - Painel NerdHub
+{% endif %}
+{% endblock %}
+
+{% block header_title %}
+{% if modo == 'novo' %}
+Novo Produto
+{% else %}
+Editar Produto
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="space-y-6">
+    {% csrf_token %}
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Nome do Produto -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Nome do Produto *</label>
+                        {{ form.name }}
+                    </div>
+                    
+                    <!-- Categoria -->
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Categoria</label>
+                        {{ form.category }}
+                    </div>
+                    
+                    <!-- Marca -->
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Marca</label>
+                        {{ form.brand }}
+                    </div>
+                    
+                    <!-- Modelo -->
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Modelo</label>
+                        {{ form.model }}
+                    </div>
+                    
+                    <!-- Preço -->
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Preço (R$) *</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">R$</span>
+                            {{ form.price }}
+                        </div>
+                    </div>
+                    
+                    <!-- Estoque -->
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Estoque *</label>
+                        {{ form.stock }}
+                    </div>
+                    
+                    <!-- Código SKU -->
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Código de Referência (SKU)</label>
+                        {{ form.sku }}
+                        <p class="text-gray-400 text-xs mt-1">Use este código no campo de pesquisa para encontrar este produto rapidamente.</p>
+                    </div>
+                </div>
+                
+                <!-- Descrição -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Descrição Comercial *</label>
+                    {{ form.description }}
+                </div>
+                
+                <!-- Dimensões -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Dimensões (Altura x Largura x Profundidade)</label>
+                    {{ form.dimensions }}
+                </div>
+                
+                <!-- Peso -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Peso (kg)</label>
+                    {{ form.weight }}
+                </div>
+                
+                <!-- Materiais -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Materiais de Construção</label>
+                    {{ form.materials }}
+                </div>
+                
+                <!-- Cores -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Cores Disponíveis</label>
+                    {{ form.colors }}
+                </div>
+                
+                <!-- Funcionalidades Principais -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Funcionalidades Principais</label>
+                    {{ form.main_features }}
+                </div>
+                
+                <!-- Conteúdo da Embalagem -->
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">Conteúdo da Embalagem</label>
+                    {{ form.package_contents }}
+                </div>
+                
+                <!-- Status do Produto -->
+                <div class="flex items-center justify-between">
+                    <div>
+                        <label class="block text-white text-sm font-medium mb-2">Status do Produto</label>
+                        <p class="text-gray-400 text-xs">Defina se o produto está ativo ou inativo no sistema</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-gray-400 text-sm">Inativo</span>
+                        {{ form.is_active }}
+                        <span class="text-white text-sm">Ativo</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagem do Produto -->
+            <div class="space-y-4">
+                <h3 class="text-white text-lg font-semibold">Imagem do Produto</h3>
+                <div class="bg-[#2A2A2A] rounded-lg p-4">
+                    <div class="mb-4">
+                        <label class="block text-white text-sm font-medium mb-2">Imagem Atual</label>
+                        <div class="w-32 h-32 bg-gray-600 rounded-lg overflow-hidden">
+                            {% if product.main_image %}
+                            <img id="currentImage" src="{{ product.main_image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover object-top">
+                            {% else %}
+                            <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                <i class="ri-image-line text-2xl"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="file-upload-area rounded-lg p-6 text-center cursor-pointer" id="uploadArea">
+                        <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center text-gray-400">
+                            <i class="ri-upload-cloud-2-line text-2xl"></i>
+                        </div>
+                        <p class="text-white text-sm font-medium mb-1">Clique para selecionar ou arraste uma imagem</p>
+                        <p class="text-gray-400 text-xs">PNG, JPG até 10MB</p>
+                        {{ form.main_image }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botões de Ação -->
+    <div class="flex justify-end space-x-4">
+        <a href="{% url 'painel:produtos_list' %}" 
+           class="bg-[#3B3B3B] hover:bg-[#4A4A4A] text-white px-6 py-3 rounded-lg font-medium !rounded-button whitespace-nowrap">
+            Cancelar
+        </a>
+        <button type="submit" 
+                class="bg-primary hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium !rounded-button whitespace-nowrap">
+            {% if modo == 'novo' %}
+            Criar Produto
+            {% else %}
+            Salvar Alterações
+            {% endif %}
+        </button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,389 @@
+/* style_index.css - homepage layout */
+/* ===== CAROUSEL ===== */
+.carousel {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    animation: slide 12s infinite;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: #000;
+}
+
+/* Transição automática */
+@keyframes slide {
+    0%   { transform: translateX(0); }
+    30%  { transform: translateX(0); }
+    
+    33.33%  { transform: translateX(-100%); }
+    63.33%  { transform: translateX(-100%); }
+    
+    66.66%  { transform: translateX(-200%); }
+    96.66%  { transform: translateX(-200%); }
+    
+    100% { transform: translateX(0); }
+}
+
+
+/* benefits strip under banner */
+.beneficios {
+    background-color: #2C2C2C;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    color: white;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.beneficio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.beneficio-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.beneficio-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .beneficio-item p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .beneficios {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .beneficio-item {
+        gap: 0.5rem;
+        padding: 0.4rem;
+    }
+    
+    .beneficio-item img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .beneficios {
+        padding: 1rem 0.5rem;
+    }
+    
+    .beneficio-item {
+        gap: 0.4rem;
+        padding: 0.3rem;
+    }
+    
+    .beneficio-item img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .beneficios {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .beneficio-item {
+        gap: 0.3rem;
+        padding: 0.2rem;
+    }
+    
+    .beneficio-item img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .beneficios {
+        padding: 0.6rem 0.2rem;
+    }
+    
+    .beneficio-item p {
+        font-size: 0.65rem;
+    }
+}
+
+/* Brands row */
+.marcas-section {
+    align-items: center;
+    background: transparent;
+    padding: 40px 0;
+}
+
+.brand-buttons {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start; /* Alinha ao início */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 5px; /* Padding reduzido */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 auto; /* Centraliza o container */
+    max-width: calc(100vw - 20px); /* Limita a largura para evitar corte */
+}
+
+.brand-buttons::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
+.brand-card {
+    min-width: 334px;
+    height: 176px;
+    border-radius: 25px;
+    background: transparent; /* Remove o fundo branco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove o padding */
+    box-shadow: none; /* Remove a sombra */
+    border: none;
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+}
+
+.brand-card:hover {
+    transform: translateY(-5px);
+}
+
+.brand-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.brand-card:hover img {
+    transform: scale(1.05);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Products grid */
+.funkos {
+    padding: 26px 0;
+    background: #f5f5f5;
+}
+
+.funkos h2 {
+    margin: 0 0 18px 0;
+    text-align: left;
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    font-size: 20px;
+    color: #333;
+}
+
+.funko-grid {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+}
+
+.funko-item {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.funko-image-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative
+}
+
+.funko-image-container img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    padding: 8px;
+}
+
+.price {
+    color: var(--green-dark);
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+.funko-item h3 {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    color: #333;
+    min-height: 36px;
+}
+
+/* small badge (cart/login) top-right */
+.add-to-cart-btn,
+.login-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.add-to-cart-btn {
+    background: #55A143;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(85, 161, 67, 0.12)
+}
+
+.login-btn {
+    background: #ffc107;
+    color: #111;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    right: 10px;
+}
+
+/* Product card hover */
+.funko-item:hover {
+    transform: translateY(-6px);
+    transition: transform .18s ease;
+}
+
+/* Footer top spacing (home-specific) */
+.footer-top {
+    padding-top: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .brand-card {
+        min-width: 260px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 900px) {
+    .brand-card {
+        min-width: 200px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 520px) {
+    .brand-buttons {
+        gap: 16px;
+        padding: 10px 2px;
+        max-width: calc(100vw - 4px); /* Ajusta para telas pequenas */
+    }
+
+    .brand-card {
+        min-width: 180px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .brand-buttons {
+        gap: 12px;
+        padding: 10px 1px;
+        max-width: calc(100vw - 2px);
+    }
+
+    .brand-card {
+        min-width: 160px;
+        height: 90px;
+    }
+}
+
+/* ===== RESPONSIVO (no device toolbar vai ficar PERFEITO) ===== */
+@media (max-width: 900px) {
+    .carousel-img {
+        width: 100%;
+        object-fit: cover;
+        height: 320px;
+    }
+
+    .carousel-track {
+        width: 300%;
+        /* mobile usa largura automática */
+    }
+}
+
+@media (max-width: 520px) {
+    .carousel-img {
+        height: 240px;
+        object-fit: cover;
+    }
+}

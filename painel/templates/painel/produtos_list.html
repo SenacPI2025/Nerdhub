@@ -1,0 +1,96 @@
+{% extends 'painel/base_painel.html' %}
+
+{% block title %}Gerenciamento de Produtos - Painel NerdHub{% endblock %}
+
+{% block header_title %}Gerenciamento de Produtos{% endblock %}
+
+{% block content %}
+<div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-white text-lg font-semibold">Lista de Produtos</h3>
+        <a href="{% url 'painel:produto_novo' %}" 
+           class="bg-primary hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium !rounded-button flex items-center">
+            <i class="ri-add-line mr-2"></i>
+            Adicionar Novo Produto
+        </a>
+    </div>
+    
+    <div class="overflow-x-auto">
+        <table class="w-full text-left">
+            <thead class="border-b border-gray-600">
+                <tr>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Produto</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Categoria</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Preço</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Estoque</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Status</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr class="border-b border-gray-700 hover:bg-[#2D2D2D]">
+                    <td class="py-4 px-4">
+                        <div class="flex items-center">
+                            {% if produto.main_image %}
+                            <div class="w-12 h-12 rounded-lg overflow-hidden mr-3">
+                                <img src="{{ produto.main_image.url }}" alt="{{ produto.name }}" class="w-full h-full object-cover">
+                            </div>
+                            {% else %}
+                            <div class="w-12 h-12 rounded-lg bg-gray-600 flex items-center justify-center mr-3">
+                                <i class="ri-image-line text-gray-400"></i>
+                            </div>
+                            {% endif %}
+                            <div>
+                                <div class="text-white font-medium">{{ produto.name }}</div>
+                                {% if produto.sku %}
+                                <div class="text-gray-400 text-xs">{{ produto.sku }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-4 px-4 text-gray-300">
+                        {% if produto.category %}
+                        {{ produto.category.name }}
+                        {% else %}
+                        <span class="text-gray-500">Sem categoria</span>
+                        {% endif %}
+                    </td>
+                    <td class="py-4 px-4 text-white">R$ {{ produto.price|floatformat:2 }}</td>
+                    <td class="py-4 px-4">
+                        <span class="{% if produto.stock == 0 %}text-red-500{% elif produto.stock < 5 %}text-yellow-500{% else %}text-green-500{% endif %}">
+                            {{ produto.stock }} unidades
+                        </span>
+                    </td>
+                    <td class="py-4 px-4">
+                        {% if produto.is_active %}
+                        <span class="bg-green-900 text-green-300 px-2 py-1 rounded-full text-xs">Ativo</span>
+                        {% else %}
+                        <span class="bg-red-900 text-red-300 px-2 py-1 rounded-full text-xs">Inativo</span>
+                        {% endif %}
+                    </td>
+                    <td class="py-4 px-4">
+                        <div class="flex space-x-2">
+                            <a href="{% url 'painel:produto_editar' produto.id %}" 
+                               class="text-blue-400 hover:text-blue-300">
+                                <i class="ri-edit-line"></i>
+                            </a>
+                            <a href="#" class="text-red-400 hover:text-red-300">
+                                <i class="ri-delete-bin-line"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="py-8 px-4 text-center text-gray-400">
+                        <i class="ri-shopping-bag-line text-2xl mb-2 block"></i>
+                        <p>Nenhum produto cadastrado ainda.</p>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

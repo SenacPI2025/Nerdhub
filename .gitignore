@@ -8,6 +8,8 @@ __pycache__/
 venv/
 .venv
 .env
+.env.local
+.env*.loca
 
 # Django
 db.sqlite3

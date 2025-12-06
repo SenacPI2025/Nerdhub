@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Painel NerdHub</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        primary: '#55A143', 
+                        secondary: '#242424' 
+                    }, 
+                    borderRadius: { 
+                        'none': '0px', 
+                        'sm': '4px', 
+                        DEFAULT: '8px', 
+                        'md': '12px', 
+                        'lg': '16px', 
+                        'xl': '20px', 
+                        '2xl': '24px', 
+                        '3xl': '32px', 
+                        'full': '9999px', 
+                        'button': '8px' 
+                    } 
+                } 
+            } 
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1F1F1F;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-['Pacifico'] text-primary mb-2">NerdHub</h1>
+            <p class="text-gray-400">Painel Administrativo</p>
+        </div>
+        
+        <div class="bg-[#2A2A2A] rounded-2xl shadow-xl p-8">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-semibold text-white mb-2">Acesse sua conta</h2>
+                <p class="text-gray-400">Entre com suas credenciais de administrador</p>
+            </div>
+            
+            {% if erro %}
+            <div class="bg-red-900 border border-red-700 text-red-200 px-4 py-3 rounded-lg mb-6">
+                <div class="flex items-center">
+                    <i class="ri-error-warning-line mr-2"></i>
+                    <span>Credenciais inválidas. Tente novamente.</span>
+                </div>
+            </div>
+            {% endif %}
+            
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-5">
+                    <label class="block text-gray-300 text-sm font-medium mb-2" for="username">
+                        Nome de usuário
+                    </label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="ri-user-line text-gray-500"></i>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username"
+                            class="w-full bg-[#1F1F1F] text-white pl-10 pr-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                            placeholder="Digite seu nome de usuário"
+                            required>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-300 text-sm font-medium mb-2" for="password">
+                        Senha
+                    </label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="ri-lock-line text-gray-500"></i>
+                        </div>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            class="w-full bg-[#1F1F1F] text-white pl-10 pr-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                            placeholder="Digite sua senha"
+                            required>
+                    </div>
+                </div>
+                
+                <button 
+                    type="submit"
+                    class="w-full bg-primary hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition duration-300 !rounded-button">
+                    Entrar no Painel
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center">
+                <a href="/" class="text-gray-400 hover:text-gray-300 text-sm flex items-center justify-center">
+                    <i class="ri-arrow-left-line mr-1"></i>
+                    Voltar para o site
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
