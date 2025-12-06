@@ -1,0 +1,1275 @@
+/* style_base_light.css - global light theme (header, footer, resets) */
+:root {
+    --green: #55A143;
+    --green-dark: #3e8b31;
+    --black: #111;
+    --muted: #f1f1f1;
+    --card: #ffffff;
+    --text: #222;
+    --accent: #4dc9a7;
+    --shadow: 0 6px 18px rgba(17, 17, 17, 0.08);
+    --radius-lg: 14px;
+    --radius-md: 10px;
+    --container: 1200px;
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--text);
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page container */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.header-top {
+    background: #55a143;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 77px;
+}
+
+.logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.espaco-para-a-logo-centralizar-lugar-certo {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 85px;
+    height: 32px;
+    position: relative;
+}
+
+.logo-nerd-hub {
+    color: #ffffff;
+    text-align: left;
+    font-family: "LuckiestGuy-Regular", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    position: relative;
+    width: 113px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-barra-de-pesquisa {
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 576px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+}
+
+.barra-de-pesquisa {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    background: #ffffff;
+    border-radius: 9999px;
+    padding: 11px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.container2 {
+    padding: 0px 0px 1px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.o-que-voc-est-procurando {
+    color: #9ca3af;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+
+.button {
+    padding: 5px 0px 6px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.container4 {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 22.21px;
+    height: 21px;
+    position: relative;
+    overflow: visible;
+    color: #9ca3af;
+}
+
+.icons-perfil-e-carrinho {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.link {
+    padding: 9px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.container5 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.icon2, .icon3 {
+    flex-shrink: 0;
+    width: 22.22px;
+    height: 21px;
+    position: relative;
+    overflow: visible;
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.link-margin {
+    padding: 0px 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 56px;
+    height: 40px;
+    position: relative;
+}
+
+/* NAVIGATION BAR - ESTILO ORIGINAL */
+.main-nav {
+    background: #111;
+    color: white;
+    width: 100%;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin: 0;
+    padding: 12px 0;
+    list-style: none;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 12px 16px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.main-nav a:hover {
+    background: #222;
+    transform: translateY(-2px);
+    transition: all .18s ease;
+}
+
+.main-nav a.active {
+    background: #55A143; /* Cor verde para página ativa */
+    color: #fff;
+}
+
+.user-menu {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+}
+
+.user-menu-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 6px;
+    padding: 8px 0;
+    top: 100%;
+    right: 0;
+}
+
+.user-menu:hover .user-menu-content {
+    display: block;
+}
+
+.user-menu-content a {
+    color: var(--text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-menu-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+footer {
+    background: var(--green);
+    color: #fff;
+    padding: 36px 16px;
+    margin-top: 36px;
+}
+
+.footer-top {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.footer-top h4 {
+    color: #eaf7ef;
+    margin: 0 0 8px 0;
+    font-size: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    opacity: .95;
+    padding-top: 18px;
+}
+
+/* Utilities */
+.row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    font-weight: 800;
+    color: var(--green-dark);
+    font-size: 18px;
+    margin: 12px 0;
+    letter-spacing: 0.6px;
+}
+
+/* Responsive helper */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 12px;
+    }
+    
+    .nav-barra-de-pesquisa {
+        max-width: 400px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-top {
+        padding: 10px 0;
+        height: auto;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 12px;
+    }
+    
+    .espaco-para-a-logo-centralizar-lugar-certo {
+        width: 40px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 20px;
+        width: 90px;
+    }
+    
+    .nav-barra-de-pesquisa {
+        order: 3;
+        max-width: 100%;
+        padding: 0 12px;
+    }
+    
+    .barra-de-pesquisa {
+        max-width: 100%;
+    }
+    
+    .icons-perfil-e-carrinho {
+        gap: 10px;
+    }
+    
+    .link-margin {
+        padding: 0 0 0 10px;
+    }
+    
+    .main-nav {
+        width: 100%;
+    }
+    
+    .main-nav ul {
+        padding: 12px 12px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 8px 0;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        padding: 0 10px;
+        gap: 8px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 18px;
+        width: 80px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 13px;
+    }
+    
+    .icon, .icon2, .icon3 {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .link {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .main-nav {
+        width: 100%;
+    }
+    
+    .main-nav ul {
+        padding: 10px 10px;
+        gap: 6px;
+    }
+    
+    .main-nav a {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-top {
+        padding: 6px 0;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        padding: 0 8px;
+        gap: 6px;
+    }
+    
+    .espaco-para-a-logo-centralizar-lugar-certo {
+        width: 20px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 16px;
+        width: 70px;
+    }
+    
+    .nav-barra-de-pesquisa {
+        padding: 0 8px;
+    }
+    
+    .input {
+        padding: 8px 12px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 12px;
+    }
+    
+    .button {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .icon, .icon2, .icon3 {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .link {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .link-margin {
+        padding: 0 0 0 6px;
+        width: 40px;
+    }
+    
+    .main-nav {
+        width: 100%;
+    }
+    
+    .main-nav ul {
+        padding: 10px 8px;
+        gap: 4px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-nav a {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-top {
+        padding: 4px 0;
+    }
+    
+    .logo-barra-de-pesquisa-icons-carrinho-e-perfil {
+        padding: 0 6px;
+        gap: 4px;
+    }
+    
+    .logo-nerd-hub {
+        font-size: 14px;
+        width: 60px;
+    }
+    
+    .input {
+        padding: 6px 10px;
+    }
+    
+    .o-que-voc-est-procurando {
+        font-size: 11px;
+    }
+    
+    .button {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .icon, .icon2, .icon3 {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .link {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .main-nav {
+        width: 100%;
+    }
+    
+    .main-nav ul {
+        padding: 8px 6px;
+    }
+    
+    .main-nav a {
+        padding: 3px 5px;
+        font-size: 11px;
+    }
+}
+
+/* Sobre Nós Page Styles */
+.mainsobrenos,
+.mainsobrenos * {
+  box-sizing: border-box;
+}
+
+.mainsobrenos {
+  position: relative;
+}
+
+.back-ground {
+  width: 1869px;
+  height: 908.92px;
+  position: static;
+}
+
+.fundo-da-pagina {
+  width: 1869px;
+  height: 908.92px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+  aspect-ratio: 1869/908.92;
+}
+
+.main-content {
+  width: 1868px;
+  height: 906px;
+  position: static;
+}
+
+.frame-296 {
+  background: linear-gradient(
+    180deg,
+    rgba(163, 163, 163, 0.35) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  width: 1868px;
+  height: 906px;
+  position: absolute;
+  left: 0px;
+  top: 1.46px;
+  overflow: hidden;
+}
+
+.nossa-historia {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  left: 173px;
+  top: 106px;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.nossa-hist-ria {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.bem-vindo-nerd-hub-sua-loja-de-confian-a-para-produtos-de-alta-qualidade-e-atendimento-excepcional-desde-nossa-funda-o-em-2024-temos-o-compromisso-de-oferecer-uma-experi-ncia-de-compra-nica-e-satisfat-ria-para-nossos-clientes {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.nossa-missao {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  left: 173px;
+  top: 366px;
+}
+
+.nossa-miss-o {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.na-nerd-hub-acreditamos-que-cada-cliente-especial-nossa-equipe-dedicada-trabalha-incansavelmente-para-selecionar-os-melhores-produtos-e-garantir-que-voc-encontre-exatamente-o-que-procura {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.nossos-valores {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 217px;
+  position: absolute;
+  left: 173px;
+  top: 624px;
+}
+
+.nossos-valores2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.informacoes2 {
+  padding: 0px 0px 0px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.item {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 28px;
+  position: relative;
+}
+
+.symbol {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 7.35px;
+  height: 28px;
+}
+
+.transpar-ncia-em-todas-as-nossas-a-es {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 349.68px;
+  height: 28px;
+}
+
+.honestidade-no-relacionamento-com-clientes {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 383.07px;
+  height: 28px;
+}
+
+.excel-ncia-em-produtos-e-servi-os {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 294.9px;
+  height: 28px;
+}
+
+.atendimento-personalizado-e-atencioso {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 336.04px;
+  height: 28px;
+}
+
+.nossa-visao {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  left: 917px;
+  top: 106px;
+}
+
+.nossa-vis-o {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.nosso-objetivo-ser-mais-do-que-apenas-uma-loja-queremos-ser-um-parceiro-em-suas-compras-oferecendo-suporte-e-atendimento-personalizado-explore-nossa-ampla-gama-de-produtos-e-descubra-por-que-a-nerd-hub-a-escolha-certa-para-voc {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.nossa-equipe {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 221px;
+  position: absolute;
+  left: 917px;
+  top: 366px;
+}
+
+.nossa-equipe2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.contamos-com-profissionais-apaixonados-pelo-universo-nerd-e-geek-sempre-prontos-para-ajudar-e-compartilhar-conhecimento-nossa-equipe-formada-por-entusiastas-que-entendem-suas-necessidades-e-prefer-ncias {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.entre-em-contato {
+  background: #529742;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 706px;
+  height: 217px;
+  position: absolute;
+  left: 917px;
+  top: 624px;
+}
+
+.entre-em-contato2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+
+.informacoes3 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.informacoes3 .container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.margin {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.icon, .icon2, .icon3 {
+  color: #ffffff;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+._61-99306-5580, .atendimento-nerdhub-com-br, .seg-a-sex-das-09-h-s-17-h {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+}
+
+.quem-somos {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  position: absolute;
+  left: 173px;
+  top: 24px;
+  width: 1450px;
+  height: 31px;
+  -webkit-text-stroke: 3px #000000;
+}
+
+.linha-separadora {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 1450px;
+  height: 0px;
+  position: absolute;
+  left: 173px;
+  top: 81px;
+}
+
+/* Responsive adjustments for Sobre Nós page */
+@media (max-width: 1200px) {
+  .nossa-historia, .nossa-missao, .nossos-valores {
+    width: 600px;
+    left: 5%;
+  }
+  
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 600px;
+    right: 5%;
+  }
+}
+
+@media (max-width: 992px) {
+  .nossa-historia, .nossa-missao, .nossos-valores,
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 80%;
+    left: 10%;
+    right: auto;
+  }
+  
+  .nossa-historia {
+    top: 80px;
+  }
+  
+  .nossa-missao {
+    top: 320px;
+  }
+  
+  .nossos-valores {
+    top: 560px;
+  }
+  
+  .nossa-visao {
+    top: 800px;
+  }
+  
+  .nossa-equipe {
+    top: 1040px;
+  }
+  
+  .entre-em-contato {
+    top: 1280px;
+  }
+  
+  .back-ground, .main-content, .frame-296 {
+    height: 1500px;
+  }
+  
+  .quem-somos {
+    bottom: 60px;
+  }
+  
+  .linha-separadora {
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nossa-historia, .nossa-missao, .nossos-valores,
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 90%;
+    left: 5%;
+    padding: 16px;
+  }
+  
+  .nossa-historia {
+    top: 60px;
+  }
+  
+  .nossa-missao {
+    top: 280px;
+  }
+  
+  .nossos-valores {
+    top: 500px;
+  }
+  
+  .nossa-visao {
+    top: 720px;
+  }
+  
+  .nossa-equipe {
+    top: 940px;
+  }
+  
+  .entre-em-contato {
+    top: 1160px;
+  }
+  
+  .back-ground, .main-content, .frame-296 {
+    height: 1300px;
+  }
+  
+  .titulo div {
+    font-size: 20px;
+  }
+  
+  .informacoes div, .informacoes2 div, .informacoes3 div {
+    font-size: 16px;
+  }
+  
+  .quem-somos {
+    font-size: 28px;
+    bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nossa-historia, .nossa-missao, .nossos-valores,
+  .nossa-visao, .nossa-equipe, .entre-em-contato {
+    width: 95%;
+    left: 2.5%;
+    padding: 12px;
+  }
+  
+  .nossa-historia {
+    top: 50px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .nossa-missao {
+    top: 260px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .nossos-valores {
+    top: 470px;
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .nossa-visao {
+    top: 700px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .nossa-equipe {
+    top: 930px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .entre-em-contato {
+    top: 1160px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .back-ground, .main-content, .frame-296 {
+    height: 1350px;
+  }
+  
+  .titulo div {
+    font-size: 18px;
+  }
+  
+  .informacoes div, .informacoes2 div, .informacoes3 div {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  
+  .quem-somos {
+    font-size: 24px;
+    bottom: 50px;
+  }
+  
+  .informacoes3 {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

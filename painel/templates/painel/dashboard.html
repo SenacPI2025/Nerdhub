@@ -1,0 +1,150 @@
+{% extends 'painel/base_painel.html' %}
+
+{% block title %}Dashboard - Painel NerdHub{% endblock %}
+
+{% block header_title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <div class="flex items-center">
+            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                <i class="ri-shopping-bag-line text-white text-xl"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-gray-400 text-sm">Total Produtos</p>
+                <p class="text-white text-2xl font-bold">24</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <div class="flex items-center">
+            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                <i class="ri-user-line text-white text-xl"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-gray-400 text-sm">Total Usuários</p>
+                <p class="text-white text-2xl font-bold">142</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <div class="flex items-center">
+            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                <i class="ri-shopping-cart-line text-white text-xl"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-gray-400 text-sm">Pedidos Hoje</p>
+                <p class="text-white text-2xl font-bold">8</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <div class="flex items-center">
+            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                <i class="ri-money-dollar-circle-line text-white text-xl"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-gray-400 text-sm">Vendas Hoje</p>
+                <p class="text-white text-2xl font-bold">R$ 2.450</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <h3 class="text-white text-lg font-semibold mb-4">Produtos Mais Vendidos</h3>
+        <div class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+                        <i class="ri-shopping-bag-line text-gray-300"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-white text-sm">Notebook Gamer RTX 4060</p>
+                        <p class="text-gray-400 text-xs">Eletrônicos</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-white text-sm">12 vendas</p>
+                    <p class="text-gray-400 text-xs">R$ 51.588</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+                        <i class="ri-mouse-line text-gray-300"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-white text-sm">Mouse Gamer RGB</p>
+                        <p class="text-gray-400 text-xs">Periféricos</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-white text-sm">8 vendas</p>
+                    <p class="text-gray-400 text-xs">R$ 800</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+                        <i class="ri-keyboard-line text-gray-300"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-white text-sm">Teclado Mecânico</p>
+                        <p class="text-gray-400 text-xs">Periféricos</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-white text-sm">6 vendas</p>
+                    <p class="text-gray-400 text-xs">R$ 900</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+        <h3 class="text-white text-lg font-semibold mb-4">Últimos Pedidos</h3>
+        <div class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-white text-sm">#PED-2023-001</p>
+                    <p class="text-gray-400 text-xs">Carlos Silva</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-white text-sm">R$ 4.299</p>
+                    <span class="bg-green-900 text-green-300 px-2 py-1 rounded-full text-xs">Concluído</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-white text-sm">#PED-2023-002</p>
+                    <p class="text-gray-400 text-xs">Maria Oliveira</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-white text-sm">R$ 150</p>
+                    <span class="bg-yellow-900 text-yellow-300 px-2 py-1 rounded-full text-xs">Processando</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-white text-sm">#PED-2023-003</p>
+                    <p class="text-gray-400 text-xs">João Santos</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-white text-sm">R$ 899</p>
+                    <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded-full text-xs">Enviado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, user_passes_test
+from .models import Product, Category
+from .forms import ProductForm, ProductImageForm
 
 def is_admin(user):
     return user.is_superuser or user.is_staff
@@ -28,25 +30,57 @@ def dashboard(request):
 
 
 @login_required
+@user_passes_test(is_admin)
 def produtos_list(request):
-    return render(request, 'painel/produtos_list.html')
+    produtos = Product.objects.all()
+    return render(request, 'painel/produtos_list.html', {'produtos': produtos})
 
 
 @login_required
+@user_passes_test(is_admin)
 def produto_novo(request):
-    return render(request, 'painel/produtos_form.html', {'modo': 'novo'})
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            return redirect('painel:produtos_list')
+    else:
+        form = ProductForm()
+    
+    return render(request, 'painel/produtos_form.html', {
+        'form': form,
+        'modo': 'novo'
+    })
 
 
 @login_required
+@user_passes_test(is_admin)
 def produto_editar(request, id):
-    return render(request, 'painel/produtos_form.html', {'modo': 'editar', 'id': id})
+    product = get_object_or_404(Product, id=id)
+    
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('painel:produtos_list')
+    else:
+        form = ProductForm(instance=product)
+    
+    return render(request, 'painel/produtos_form.html', {
+        'form': form,
+        'modo': 'editar',
+        'product': product,
+        'id': id
+    })
 
 
 @login_required
+@user_passes_test(is_admin)
 def usuarios_list(request):
     return render(request, 'painel/usuarios_list.html')
 
 
 @login_required
+@user_passes_test(is_admin)
 def pedidos_list(request):
     return render(request, 'painel/pedidos_list.html')

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Painel Administrativo - NerdHub{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        primary: '#55A143', 
+                        secondary: '#242424' 
+                    }, 
+                    borderRadius: { 
+                        'none': '0px', 
+                        'sm': '4px', 
+                        DEFAULT: '8px', 
+                        'md': '12px', 
+                        'lg': '16px', 
+                        'xl': '20px', 
+                        '2xl': '24px', 
+                        '3xl': '32px', 
+                        'full': '9999px', 
+                        'button': '8px' 
+                    } 
+                } 
+            } 
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item:hover {
+            background-color: #2D2D2D;
+        }
+
+        .sidebar-item.active {
+            background-color: #55A143;
+        }
+
+        .toggle-switch {
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background-color: #55A143;
+        }
+
+        .toggle-switch.active .toggle-circle {
+            transform: translateX(1.5rem);
+        }
+
+        .file-upload-area {
+            border: 2px dashed #4A4A4A;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-area.dragover {
+            border-color: #55A143;
+            background-color: rgba(85, 161, 67, 0.1);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+
+        input[type="range"]::-webkit-slider-track {
+            background: #2A2A2A;
+            height: 6px;
+            border-radius: 3px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #55A143;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-track {
+            background: #2A2A2A;
+            height: 6px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #55A143;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="fixed left-0 top-0 h-full w-64 bg-[#1F1F1F] text-white z-10">
+        <div class="p-6 border-b border-gray-700">
+            <h1 class="text-2xl font-['Pacifico'] text-primary">NerdHub</h1>
+        </div>
+        <nav class="mt-6">
+            <a href="{% url 'painel:dashboard' %}" 
+               class="sidebar-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %} flex items-center px-6 py-3 text-sm font-medium">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-dashboard-line"></i>
+                </div>
+                Dashboard
+            </a>
+            <a href="{% url 'painel:usuarios_list' %}" 
+               class="sidebar-item {% if request.resolver_match.url_name == 'usuarios_list' %}active{% endif %} flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-user-line"></i>
+                </div>
+                Usuários
+            </a>
+            <a href="{% url 'painel:produtos_list' %}" 
+               class="sidebar-item {% if request.resolver_match.url_name == 'produtos_list' or request.resolver_match.url_name == 'produto_novo' or request.resolver_match.url_name == 'produto_editar' %}active{% endif %} flex items-center px-6 py-3 text-sm font-medium">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-shopping-bag-line"></i>
+                </div>
+                Produtos
+            </a>
+            <a href="{% url 'painel:pedidos_list' %}" 
+               class="sidebar-item {% if request.resolver_match.url_name == 'pedidos_list' %}active{% endif %} flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-shopping-cart-line"></i>
+                </div>
+                Pedidos
+            </a>
+            <a href="#" 
+               class="sidebar-item flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-bar-chart-line"></i>
+                </div>
+                Relatórios
+            </a>
+            <a href="#" 
+               class="sidebar-item flex items-center px-6 py-3 text-sm font-medium text-gray-300 hover:text-white">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-settings-line"></i>
+                </div>
+                Configurações
+            </a>
+        </nav>
+    </div>
+    <div class="ml-64">
+        <header class="bg-[#242424] text-white px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                {% if request.resolver_match.url_name != 'dashboard' %}
+                <a href="{% url 'painel:dashboard' %}" 
+                   class="bg-[#3B3B3B] hover:bg-[#4A4A4A] text-white p-2 rounded-lg !rounded-button">
+                    <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                </a>
+                {% endif %}
+                <h2 class="text-xl font-semibold">{% block header_title %}{% endblock %}</h2>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Buscar..." 
+                        class="bg-[#3B3B3B] text-white px-4 py-2 pl-10 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+                        <i class="ri-search-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <i class="ri-user-fill text-white"></i>
+                    </div>
+                    <span class="text-sm font-medium">{{ user.username }}</span>
+                </div>
+            </div>
+        </header>
+        <main class="p-6">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <script>
+        // Category dropdown script
+        document.addEventListener('DOMContentLoaded', function () {
+            const categorySelect = document.getElementById('categorySelect');
+            const categoryDropdown = document.getElementById('categoryDropdown');
+            const categoryOptions = document.querySelectorAll('.category-option');
+            
+            if (categorySelect && categoryDropdown) {
+                categorySelect.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    categoryDropdown.classList.toggle('hidden');
+                });
+                
+                document.addEventListener('click', function () {
+                    if (categoryDropdown) {
+                        categoryDropdown.classList.add('hidden');
+                    }
+                });
+                
+                categoryOptions.forEach(option => {
+                    option.addEventListener('click', function () {
+                        const value = this.getAttribute('data-value');
+                        const text = this.textContent;
+                        categorySelect.querySelector('span').textContent = text;
+                        categoryDropdown.classList.add('hidden');
+                    });
+                });
+            }
+        });
+
+        // Status toggle script
+        document.addEventListener('DOMContentLoaded', function () {
+            const statusToggle = document.getElementById('statusToggle');
+            if (statusToggle) {
+                const toggleCircle = statusToggle.querySelector('.toggle-circle');
+                let isActive = true;
+                
+                statusToggle.addEventListener('click', function () {
+                    isActive = !isActive;
+                    if (isActive) {
+                        statusToggle.classList.add('active');
+                        statusToggle.style.backgroundColor = '#55A143';
+                        toggleCircle.style.transform = 'translateX(1.5rem)';
+                    } else {
+                        statusToggle.classList.remove('active');
+                        statusToggle.style.backgroundColor = '#4A4A4A';
+                        toggleCircle.style.transform = 'translateX(0)';
+                    }
+                });
+            }
+        });
+
+        // File upload script
+        document.addEventListener('DOMContentLoaded', function () {
+            const uploadArea = document.getElementById('uploadArea');
+            const imageUpload = document.getElementById('imageUpload');
+            const currentImage = document.getElementById('currentImage');
+            
+            if (uploadArea && imageUpload) {
+                uploadArea.addEventListener('click', function () {
+                    imageUpload.click();
+                });
+                
+                uploadArea.addEventListener('dragover', function (e) {
+                    e.preventDefault();
+                    uploadArea.classList.add('dragover');
+                });
+                
+                uploadArea.addEventListener('dragleave', function () {
+                    uploadArea.classList.remove('dragover');
+                });
+                
+                uploadArea.addEventListener('drop', function (e) {
+                    e.preventDefault();
+                    uploadArea.classList.remove('dragover');
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        handleFileUpload(files[0]);
+                    }
+                });
+                
+                imageUpload.addEventListener('change', function () {
+                    if (this.files && this.files[0]) {
+                        handleFileUpload(this.files[0]);
+                    }
+                });
+                
+                function handleFileUpload(file) {
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            if (currentImage) {
+                                currentImage.src = e.target.result;
+                            }
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            }
+        });
+
+        // Form validation script
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            if (form) {
+                const requiredFields = ['id_name', 'id_price', 'id_stock', 'id_description'];
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    let isValid = true;
+                    requiredFields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (field) {
+                            const value = field.value.trim();
+                            if (!value) {
+                                field.style.borderColor = '#ef4444';
+                                field.style.boxShadow = '0 0 0 2px rgba(239, 68, 68, 0.2)';
+                                isValid = false;
+                            } else {
+                                field.style.borderColor = '';
+                                field.style.boxShadow = '';
+                            }
+                        }
+                    });
+                    if (isValid) {
+                        form.submit();
+                    }
+                });
+            }
+        });
+
+        // Mobile responsive script
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.querySelector('.fixed.left-0');
+            const mainContent = document.querySelector('.ml-64');
+            function handleResize() {
+                if (window.innerWidth < 1024) {
+                    if (sidebar) sidebar.classList.add('-translate-x-full');
+                    if (mainContent) mainContent.classList.remove('ml-64');
+                } else {
+                    if (sidebar) sidebar.classList.remove('-translate-x-full');
+                    if (mainContent) mainContent.classList.add('ml-64');
+                }
+            }
+            handleResize();
+            window.addEventListener('resize', handleResize);
+        });
+    </script>
+</body>
+</html>

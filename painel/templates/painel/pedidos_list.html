@@ -1,0 +1,111 @@
+{% extends 'painel/base_painel.html' %}
+
+{% block title %}Gerenciamento de Pedidos - Painel NerdHub{% endblock %}
+
+{% block header_title %}Gerenciamento de Pedidos{% endblock %}
+
+{% block content %}
+<div class="bg-[#3B3B3B] rounded-lg shadow-lg p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-white text-lg font-semibold">Lista de Pedidos</h3>
+        <div class="flex space-x-3">
+            <select class="bg-[#2A2A2A] text-white px-4 py-2 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                <option>Todos os status</option>
+                <option>Pendente</option>
+                <option>Processando</option>
+                <option>Enviado</option>
+                <option>Entregue</option>
+                <option>Cancelado</option>
+            </select>
+            <button class="bg-primary hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium !rounded-button">
+                Filtrar
+            </button>
+        </div>
+    </div>
+    
+    <div class="overflow-x-auto">
+        <table class="w-full text-left">
+            <thead class="border-b border-gray-600">
+                <tr>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Pedido</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Cliente</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Data</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Valor</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Status</th>
+                    <th class="py-3 px-4 text-gray-300 font-medium text-sm">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-gray-700 hover:bg-[#2D2D2D]">
+                    <td class="py-4 px-4">
+                        <div class="text-white font-medium">#PED-2023-001</div>
+                        <div class="text-gray-400 text-xs">3 itens</div>
+                    </td>
+                    <td class="py-4 px-4 text-gray-300">Carlos Silva</td>
+                    <td class="py-4 px-4 text-gray-300">15/10/2023</td>
+                    <td class="py-4 px-4 text-white">R$ 4.299,00</td>
+                    <td class="py-4 px-4">
+                        <span class="bg-green-900 text-green-300 px-2 py-1 rounded-full text-xs">Concluído</span>
+                    </td>
+                    <td class="py-4 px-4">
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-blue-400 hover:text-blue-300">
+                                <i class="ri-eye-line"></i>
+                            </a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300">
+                                <i class="ri-edit-line"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="border-b border-gray-700 hover:bg-[#2D2D2D]">
+                    <td class="py-4 px-4">
+                        <div class="text-white font-medium">#PED-2023-002</div>
+                        <div class="text-gray-400 text-xs">1 item</div>
+                    </td>
+                    <td class="py-4 px-4 text-gray-300">Maria Oliveira</td>
+                    <td class="py-4 px-4 text-gray-300">15/10/2023</td>
+                    <td class="py-4 px-4 text-white">R$ 150,00</td>
+                    <td class="py-4 px-4">
+                        <span class="bg-yellow-900 text-yellow-300 px-2 py-1 rounded-full text-xs">Processando</span>
+                    </td>
+                    <td class="py-4 px-4">
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-blue-400 hover:text-blue-300">
+                                <i class="ri-eye-line"></i>
+                            </a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300">
+                                <i class="ri-edit-line"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="border-b border-gray-700 hover:bg-[#2D2D2D]">
+                    <td class="py-4 px-4">
+                        <div class="text-white font-medium">#PED-2023-003</div>
+                        <div class="text-gray-400 text-xs">2 itens</div>
+                    </td>
+                    <td class="py-4 px-4 text-gray-300">João Santos</td>
+                    <td class="py-4 px-4 text-gray-300">14/10/2023</td>
+                    <td class="py-4 px-4 text-white">R$ 899,00</td>
+                    <td class="py-4 px-4">
+                        <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded-full text-xs">Enviado</span>
+                    </td>
+                    <td class="py-4 px-4">
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-blue-400 hover:text-blue-300">
+                                <i class="ri-eye-line"></i>
+                            </a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300">
+                                <i class="ri-edit-line"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
