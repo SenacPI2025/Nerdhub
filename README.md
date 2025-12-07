@@ -154,6 +154,23 @@ The application is configured for deployment on Railway.app:
    - `DJANGO_ALLOWED_HOSTS`: Your domain names
    - `DEBUG`: Set to "false" for production
 
+3. During deployment, Railway will automatically:
+   - Run the build script (`build.sh`) which handles:
+     - Database migrations
+     - Static file collection
+   - Start the web server using the Procfile
+
+## 🔧 Troubleshooting
+
+### Database Migration Issues
+If you encounter "no such table" errors:
+1. Ensure migrations have been run: `python manage.py migrate`
+2. Check that the build script is being executed during deployment
+
+### Authentication Flow
+- Regular users logging in through `/painel/login/` will be redirected to the main site
+- Admin/staff users will be redirected to the administrative panel
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

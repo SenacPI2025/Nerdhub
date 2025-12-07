@@ -16,7 +16,12 @@ def login_painel(request):
         )
         if user:
             login(request, user)
-            return redirect('painel:dashboard')
+            # Check if user is admin/staff - if so, go to panel, otherwise go to profile
+            if user.is_superuser or user.is_staff:
+                return redirect('painel:dashboard')
+            else:
+                # For regular users, redirect to profile or home page
+                return redirect('nucleo:index')  # Change this to user profile URL when ready
         else:
             return render(request, 'painel/login.html', {'erro': True})
 
