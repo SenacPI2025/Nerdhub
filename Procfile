@@ -1,1 +1,2 @@
-web: python startup.py
+release: python manage.py migrate --noinput && python manage.py collectstatic --noinput
+web: gunicorn nerdhub.wsgi --log-file -
