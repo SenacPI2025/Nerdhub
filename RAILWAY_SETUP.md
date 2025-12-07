@@ -60,6 +60,11 @@ After deployment, you need to run these commands in the Railway console:
    ```
    Follow the prompts to create an admin user.
 
+4. Initialize categories:
+   ```bash
+   python initialize_railway_db.py
+   ```
+
 ## Step 5: Verify Deployment
 
 1. Visit your application URL provided by Railway
@@ -73,6 +78,8 @@ After deployment, you need to run these commands in the Railway console:
 1. **Database Connection Error**: Check that DATABASE_URL is correctly set in environment variables
 2. **Static Files Not Loading**: Ensure Whitenoise is configured and collectstatic was run
 3. **Missing Dependencies**: Verify all packages in requirements.txt are installed
+4. **Debug Mode Still Enabled**: Make sure DEBUG=false is set in environment variables
+5. **404 Pages Not Showing**: Ensure DEBUG=false and that you've created the categories with initialize_railway_db.py
 
 ### Checking Logs
 
