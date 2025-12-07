@@ -1,0 +1,81 @@
+{% extends 'nucleo/base.html' %}
+
+{% block title %}{{ marca.name }} - Produtos{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style_por_marca.css' %}">
+</head>
+
+<body>
+  <!-- BANNER PRINCIPAL -->
+  <section class="banner">
+    {% if marca.name == "Disney" %}
+    <img src="{% static 'BRimage/BannerDisneyR.png' %}" alt="Banner Disney">
+    {% elif marca.name == "Marvel" %}
+    <img src="{% static 'BRimage/BannerMarvelR.png' %}" alt="Banner Marvel">
+    {% elif marca.name == "Star Wars" %}
+    <img src="{% static 'BRimage/BannerStarwarsR.png' %}" alt="Banner Star Wars">
+    {% elif marca.name == "PlayStation" %}
+    <img src="{% static 'BRimage/BannerPlaystationR.png' %}" alt="Banner PlayStation">
+    {% elif marca.name == "Xbox" %}
+    <img src="{% static 'BRimage/BannerXboxR.png' %}" alt="Banner Xbox">
+    {% else %}
+    <img src="{% static 'BRimage/bannerR.png' %}" alt="Banner Padrão sem nada">
+    {% endif %}
+  </section>
+
+  <!-- GATILHOS -->
+  <section class="beneficios">
+    <div class="beneficio-item">
+      <img src="{% static 'img/icon_cartao.png' %}" alt="icon_cartao">
+      <p>Em até 12x sem juros</p>
+    </div>
+
+    <div class="beneficio-item">
+      <img src="{% static 'img/icon_carro_entrega.png' %}" alt="icon_carro_entrega">
+      <p>Entrega rápida</p>
+    </div>
+
+    <div class="beneficio-item">
+      <img src="{% static 'img/icon_caixa.png' %}" alt="icon_caixa">
+      <p>Frete grátis</p>
+    </div>
+
+    <div class="beneficio-item">
+      <img src="{% static 'img/icon_pix.png' %}" alt="icon_pix">
+      <p>Selecione o Pix e ganhe 5% de desconto</p>
+    </div>
+  </section>
+
+  <!-- LISTA DE PRODUTOS DA MARCA -->
+  <section class="produtos-section">
+    <h2>{{ marca.name }}</h2>
+    <div class="produto-grid">
+      {% for produto in produtos %}
+      <div class="produto-item">
+        {% if produto.main_image %}
+        <img src="{{ produto.main_image.url }}" alt="{{ produto.name }}" class="produto-imagem">
+        {% else %}
+        <div class="produto-imagem-placeholder">
+          <span>Imagem não disponível</span>
+        </div>
+        {% endif %}
+        <h3>{{ produto.name }}</h3>
+        <p class="price">R$ {{ produto.price|floatformat:2 }}</p>
+        <a href="#" class="btn">Ver mais</a>
+      </div>
+      {% empty %}
+      <p>Nenhum produto encontrado para esta marca.</p>
+      {% endfor %}
+    </div>
+  </section>
+</body>
+</html>
+{% endblock %}
