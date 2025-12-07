@@ -1,0 +1,210 @@
+[
+{
+  "model": "painel.category",
+  "pk": 1,
+  "fields": {
+    "name": "Disney",
+    "slug": "disney"
+  }
+},
+{
+  "model": "painel.category",
+  "pk": 2,
+  "fields": {
+    "name": "Marvel",
+    "slug": "marvel"
+  }
+},
+{
+  "model": "painel.category",
+  "pk": 3,
+  "fields": {
+    "name": "Star Wars",
+    "slug": "star-wars"
+  }
+},
+{
+  "model": "painel.category",
+  "pk": 4,
+  "fields": {
+    "name": "PlayStation",
+    "slug": "playstation"
+  }
+},
+{
+  "model": "painel.category",
+  "pk": 5,
+  "fields": {
+    "name": "Xbox",
+    "slug": "xbox"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 1,
+  "fields": {
+    "name": "Boneco Mickey Mouse",
+    "price": "129.90",
+    "description": "Boneco colecionßvel do Mickey Mouse",
+    "sku": null,
+    "brand": null,
+    "model": null,
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 1,
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2025-12-07T14:52:42.429Z",
+    "updated_at": "2025-12-07T14:52:42.429Z"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 2,
+  "fields": {
+    "name": "Camiseta Avengers",
+    "price": "89.90",
+    "description": "Camiseta oficial dos Vingadores",
+    "sku": null,
+    "brand": null,
+    "model": null,
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 2,
+    "stock": 15,
+    "is_active": true,
+    "created_at": "2025-12-07T14:52:42.436Z",
+    "updated_at": "2025-12-07T14:52:42.436Z"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 3,
+  "fields": {
+    "name": "Caneca Disney Princess",
+    "price": "49.90",
+    "description": "Caneca tÚrmica com princesas da Disney",
+    "sku": null,
+    "brand": "Disney",
+    "model": "Princess Collection",
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 1,
+    "stock": 25,
+    "is_active": true,
+    "created_at": "2025-12-07T14:55:51.769Z",
+    "updated_at": "2025-12-07T14:55:51.769Z"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 4,
+  "fields": {
+    "name": "Action Figure Spider-Man",
+    "price": "199.90",
+    "description": "Action figure do Homem-Aranha com 15cm",
+    "sku": null,
+    "brand": "Marvel",
+    "model": "Spider-Man Classic",
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 2,
+    "stock": 8,
+    "is_active": true,
+    "created_at": "2025-12-07T14:55:51.781Z",
+    "updated_at": "2025-12-07T14:55:51.781Z"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 5,
+  "fields": {
+    "name": "Lightsaber Replica",
+    "price": "299.90",
+    "description": "RÚplica da lightsaber do Luke Skywalker",
+    "sku": null,
+    "brand": "Star Wars",
+    "model": "Luke Skywalker Lightsaber",
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 3,
+    "stock": 5,
+    "is_active": true,
+    "created_at": "2025-12-07T14:55:51.794Z",
+    "updated_at": "2025-12-07T14:55:51.794Z"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 6,
+  "fields": {
+    "name": "Controle DualSense",
+    "price": "299.90",
+    "description": "Controle oficial do PlayStation 5",
+    "sku": null,
+    "brand": "Sony",
+    "model": "DualSense",
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 4,
+    "stock": 20,
+    "is_active": true,
+    "created_at": "2025-12-07T14:55:51.803Z",
+    "updated_at": "2025-12-07T14:55:51.803Z"
+  }
+},
+{
+  "model": "painel.product",
+  "pk": 7,
+  "fields": {
+    "name": "Controle Xbox Series X",
+    "price": "249.90",
+    "description": "Controle oficial do Xbox Series X|S",
+    "sku": null,
+    "brand": "Microsoft",
+    "model": "Xbox Wireless Controller",
+    "dimensions": null,
+    "weight": null,
+    "materials": null,
+    "colors": null,
+    "main_features": null,
+    "package_contents": null,
+    "main_image": "",
+    "category": 5,
+    "stock": 18,
+    "is_active": true,
+    "created_at": "2025-12-07T14:55:51.811Z",
+    "updated_at": "2025-12-07T14:55:51.811Z"
+  }
+}
+]
