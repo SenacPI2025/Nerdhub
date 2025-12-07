@@ -144,7 +144,13 @@ python manage.py runserver
 - **Admin Panel**: http://127.0.0.1:8000/admin/
 - **Custom Panel**: http://127.0.0.1:8000/painel/
 
-## 🌐 Deployment
+## 🗄️ Database Schema
+
+For detailed information about the database structure, see [DATABASE_SCHEMA.md](DATABASE_SCHEMA.md).
+
+## ☁️ Railway Deployment
+
+For instructions on deploying to Railway with PostgreSQL, see [RAILWAY_SETUP.md](RAILWAY_SETUP.md).
 
 The application is configured for deployment on Railway.app:
 
@@ -153,23 +159,6 @@ The application is configured for deployment on Railway.app:
    - `DJANGO_SECRET_KEY`: Your Django secret key
    - `DJANGO_ALLOWED_HOSTS`: Your domain names
    - `DEBUG`: Set to "false" for production
-
-3. During deployment, Railway will automatically:
-   - Execute the release phase which handles:
-     - Database migrations
-     - Static file collection
-   - Start the web server using the Procfile
-
-## 🔧 Troubleshooting
-
-### Database Migration Issues
-If you encounter "no such table" errors:
-1. Ensure migrations have been run: `python manage.py migrate`
-2. Check that the release phase in Procfile is being executed during deployment
-
-### Authentication Flow
-- Regular users logging in through `/painel/login/` will be redirected to the main site
-- Admin/staff users will be redirected to the administrative panel
 
 ## 📝 License
 
