@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.views.defaults import page_not_found, server_error
 from painel.models import Product, Category
 
 def index(request):
@@ -30,3 +31,11 @@ def produtos_por_marca(request, marca_slug):
         'marca': category,
         'produtos': produtos
     })
+
+def custom_404(request, exception):
+    """Manipulador de erro 404 personalizado"""
+    return render(request, 'nucleo/404.html', status=404)
+
+def custom_500(request):
+    """Manipulador de erro 500 personalizado"""
+    return render(request, 'nucleo/500.html', status=500)
