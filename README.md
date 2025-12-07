@@ -155,7 +155,7 @@ The application is configured for deployment on Railway.app:
    - `DEBUG`: Set to "false" for production
 
 3. During deployment, Railway will automatically:
-   - Execute the startup script (`start.sh`) which handles:
+   - Execute the startup script (`startup.py`) which handles:
      - Database migrations
      - Static file collection
      - Starting the Gunicorn server
