@@ -155,17 +155,17 @@ The application is configured for deployment on Railway.app:
    - `DEBUG`: Set to "false" for production
 
 3. During deployment, Railway will automatically:
-   - Execute the startup script (`start.sh`) which handles:
+   - Execute the release phase which handles:
      - Database migrations
      - Static file collection
-     - Starting the Gunicorn server
+   - Start the web server using the Procfile
 
 ## 🔧 Troubleshooting
 
 ### Database Migration Issues
 If you encounter "no such table" errors:
 1. Ensure migrations have been run: `python manage.py migrate`
-2. Check that the startup script is being executed during deployment
+2. Check that the release phase in Procfile is being executed during deployment
 
 ### Authentication Flow
 - Regular users logging in through `/painel/login/` will be redirected to the main site
