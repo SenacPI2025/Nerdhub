@@ -1,38 +1,43 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}NerdHub{% endblock %}</title>
-
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/nucleo/icons/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
     {% block extra_css %}{% endblock %}
-
-    <link rel="stylesheet" href="{% static 'css/style_base_light.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-top">
-            <div class="logo-barra-de-pesquisa-icons-carrinho-e-perfil">
-                <div class="espaco-para-a-logo-centralizar-lugar-certo"></div>
-                <div class="logo-nerd-hub">NERDHUB</div>
-                <div class="nav-barra-de-pesquisa">
+    <!-- HEADER - ESTILO ORIGINAL -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="{% url 'nucleo:index' %}">
+                    <img src="{% static 'nucleo/img/logo.png' %}" alt="Logo NerdHub">
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
                     <div class="container">
-                        <div class="barra-de-pesquisa">
-                            <div class="input">
-                                <div class="container2">
-                                    <input type="text" class="o-que-voc-est-procurando" placeholder="O que você está procurando?">
-                                </div>
-                            </div>
-                            <div class="button">
-                                <div class="container3">
-                                    <div class="container4">
-                                        <i class="fa fa-search icon"></i>
-                                    </div>
+                        <div class="input-field">
+                            <input placeholder="O que você está procurando?" type="text" class="input">
+                        </div>
+                        <div class="button">
+                            <div class="container3">
+                                <div class="container4">
+                                    <i class="fa fa-search icon"></i>
                                 </div>
                             </div>
                         </div>
@@ -53,16 +58,10 @@
                             <div class="container5">
                                 <div class="container4">
                                     {% if user.is_authenticated %}
-                                    <div class="user-menu">
-                                        <a href="#">Olá, {{ user.username }} ▼</a>
-                                        <div class="user-menu-content">
-                                            <a href="{% url 'painel:dashboard' %}">Meu Perfil</a>
-                                            <a href="#">Meus Endereços</a>
-                                            <a href="#">Sair</a>
-                                        </div>
-                                    </div>
+                                    <a href="{% url 'painel:dashboard' %}">Olá, {{ user.username }}</a>
                                     {% else %}
-                                    <a href="{% url 'painel:login' %}">Entrar</a>
+                                    <a href="{% url 'painel:login' %}">Entrar</a> / 
+                                    <a href="{% url 'painel:registro' %}">Registrar</a>
                                     {% endif %}
                                 </div>
                             </div>
@@ -80,16 +79,19 @@
             </ul>
         </nav>
     </header>
-    <!-- CONTEÚDO -->
-    <main> {% if messages %} <div class="messages"> {% for message in messages %} <div
-                class="alert alert-{{ message.tags }}"> {{ message }} </div> {% endfor %} </div> {% endif %} {% block content %}{% endblock %} </main> <!-- FOOTER -->
-    <footer>
-        <div class="footer-top">
-            <div>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER - ESTILO ORIGINAL -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
                 <h4>Nerd Hub</h4>
                 <p>Sua loja de confiança para produtos de alta qualidade e atendimento excepcional.</p>
             </div>
-            <div>
+            <div class="footer-section">
                 <h4>Links Rápidos</h4>
                 <ul>
                     <li><a href="{% url 'nucleo:index' %}">Principal</a></li>
@@ -98,7 +100,7 @@
                     <li><a href="{% url 'nucleo:suporte' %}">Suporte</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="footer-section">
                 <h4>Categorias</h4>
                 <ul>
                     <li><a href="#">Colecionáveis</a></li>
@@ -107,16 +109,22 @@
                     <li><a href="#">Vestuário</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="footer-section">
                 <h4>Redes Sociais</h4>
-                <div class="social-icons"> <a href="#">📘</a> <a href="#">📸</a> <a href="#">✖️</a> </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 NerdHub. Todos os direitos reservados.</p>
+            <p>© 2024 Nerd Hub. Todos os direitos reservados.</p>
         </div>
     </footer>
-</body> <!-- Isso e para o suporte.html -->
-<script> function enviarMensagem() { const input = document.getElementById('user-input'); const mensagem = input.value.trim(); if (!mensagem) return; const chat = document.getElementById('chat-messages'); const userMsg = document.createElement('p'); userMsg.textContent = mensagem; userMsg.style.textAlign = 'right'; chat.appendChild(userMsg); const respostaBot = document.createElement('p'); respostaBot.classList.add('bot-message'); respostaBot.textContent = gerarResposta(mensagem); chat.appendChild(respostaBot); input.value = ''; chat.scrollTop = chat.scrollHeight; } function gerarResposta(mensagem) { mensagem = mensagem.toLowerCase(); if (mensagem.includes('erro') || mensagem.includes('problema')) { return "Sinto muito! Verifique sua conexão e tente novamente. Caso continue, fale com nosso suporte técnico."; } else if (mensagem.includes('login') || mensagem.includes('senha')) { return "Você pode redefinir sua senha clicando em 'Esqueci minha senha' na tela de login."; } else if (mensagem.includes('produto') || mensagem.includes('entrega')) { return "Você pode acompanhar seu pedido na aba 'Meus Pedidos'. Precisa de mais ajuda?"; } else { return "Desculpe, não entendi. Por favor, descreva sua dúvida com mais detalhes."; } } // Auto-hide messages after 5 seconds setTimeout(function() { var messages = document.querySelector('.messages'); if (messages) { messages.style.display = 'none'; } }, 5000); </script>
 
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
 </html>

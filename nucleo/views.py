@@ -6,9 +6,14 @@ from painel.models import Product, Category
 def index(request):
     # Obter todas as categorias (marcas) para exibir no index
     categories = Category.objects.all()
+    
+    # Obter produtos em destaque (aleatórios)
+    produtos_destaque = Product.objects.filter(is_active=True).order_by('?')[:20]
+    
     return render(request, 'nucleo/index.html', {
         'page_name': 'index',
-        'categories': categories
+        'categories': categories,
+        'produtos': produtos_destaque
     })
 
 def ver_carrinho(request):

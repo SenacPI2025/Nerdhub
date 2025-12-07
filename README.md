@@ -134,12 +134,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-6. Initialize sample data:
-```bash
-python setup_sample_data.py
-```
-
-7. Start the development server:
+6. Start the development server:
 ```bash
 python manage.py runserver
 ```
@@ -164,8 +159,6 @@ The application is configured for deployment on Railway.app:
    - `DJANGO_SECRET_KEY`: Your Django secret key
    - `DJANGO_ALLOWED_HOSTS`: Your domain names
    - `DEBUG`: Set to "false" for production
-
-Important: For custom 404 pages to work on Railway, you MUST set `DEBUG=false` in your environment variables.
 
 ## 📝 License
 

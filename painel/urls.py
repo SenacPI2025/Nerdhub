@@ -5,6 +5,8 @@ app_name = 'painel'
 
 urlpatterns = [
     path('login/', views.login_painel, name='login'),
+    path('registro/', views.registro, name='registro'),
+    path('logout/', views.logout_painel, name='logout'),
     path('', views.dashboard, name='dashboard'),
 
     path('produtos/', views.produtos_list, name='produtos_list'),

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Painel NerdHub</title>
+    <title>Login - NerdHub</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
         tailwind.config = { 
@@ -51,13 +51,13 @@
     <div class="w-full max-w-md">
         <div class="text-center mb-8">
             <h1 class="text-3xl font-['Pacifico'] text-primary mb-2">NerdHub</h1>
-            <p class="text-gray-400">Painel Administrativo</p>
+            <p class="text-gray-400">Acesse sua conta</p>
         </div>
         
         <div class="bg-[#2A2A2A] rounded-2xl shadow-xl p-8">
             <div class="text-center mb-6">
-                <h2 class="text-2xl font-semibold text-white mb-2">Acesse sua conta</h2>
-                <p class="text-gray-400">Entre com suas credenciais de administrador</p>
+                <h2 class="text-2xl font-semibold text-white mb-2">Faça login</h2>
+                <p class="text-gray-400">Entre com suas credenciais</p>
             </div>
             
             {% if erro %}
@@ -110,12 +110,19 @@
                 <button 
                     type="submit"
                     class="w-full bg-primary hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition duration-300 !rounded-button">
-                    Entrar no Painel
+                    Entrar
                 </button>
             </form>
             
             <div class="mt-6 text-center">
-                <a href="/" class="text-gray-400 hover:text-gray-300 text-sm flex items-center justify-center">
+                <p class="text-gray-400 text-sm">
+                    Não tem uma conta? 
+                    <a href="{% url 'painel:registro' %}" class="text-primary hover:text-green-400 font-medium">Registre-se aqui</a>
+                </p>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <a href="{% url 'nucleo:index' %}" class="text-gray-400 hover:text-gray-300 text-sm flex items-center justify-center">
                     <i class="ri-arrow-left-line mr-1"></i>
                     Voltar para o site
                 </a>

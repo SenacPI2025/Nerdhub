@@ -1,43 +1,35 @@
-{% extends "nucleo/base.html" %}
+{% extends 'nucleo/base.html' %}
 {% load static %}
 
-{% block title %}Página Inicial - NerdHub{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/style_index.css' %}">
-{% endblock %}
+{% block title %}NerdHub - Sua Loja de Funkos e Colecionáveis{% endblock %}
 
 {% block content %}
-
-<!-- HERO / BANNER -->
-<div class="carousel">
+<!-- CAROUSEL -->
+<section class="carousel">
     <div class="carousel-track">
-        <img src="{% static 'nucleo/img/banner.png' %}" class="carousel-img">
-        <img src="{% static 'nucleo/img/banner2.png' %}" class="carousel-img">
-        <img src="{% static 'nucleo/img/banner3.png' %}" class="carousel-img">
+        <img src="{% static 'nucleo/img/banner1.jpg' %}" alt="Banner 1" class="carousel-img">
+        <img src="{% static 'nucleo/img/banner2.jpg' %}" alt="Banner 2" class="carousel-img">
+        <img src="{% static 'nucleo/img/banner3.jpg' %}" alt="Banner 3" class="carousel-img">
     </div>
-</div>
+</section>
 
 <!-- BENEFITS STRIP -->
 <section class="beneficios">
     <div class="beneficio-item">
-        <img src="{% static 'nucleo/img/icon_cartao.png' %}" alt="Cartão">
-        <p>Em até 12x sem juros</p>
+        <img src="{% static 'nucleo/icons/frete-gratis.png' %}" alt="Frete Grátis">
+        <p>Frete Grátis a partir de R$ 200,00</p>
     </div>
-
     <div class="beneficio-item">
-        <img src="{% static 'nucleo/img/icon_carro_entrega.png' %}" alt="Entrega">
-        <p>Entrega rápida</p>
+        <img src="{% static 'nucleo/icons/troca.png' %}" alt="Troca Grátis">
+        <p>Troca Grátis em até 30 dias</p>
     </div>
-
     <div class="beneficio-item">
-        <img src="{% static 'nucleo/img/icon_caixa.png' %}" alt="Caixa">
-        <p>Frete grátis</p>
+        <img src="{% static 'nucleo/icons/protegido.png' %}" alt="Site Protegido">
+        <p>Site 100% Seguro</p>
     </div>
-
     <div class="beneficio-item">
-        <img src="{% static 'nucleo/img/icon_pix.png' %}" alt="Pix">
-        <p>Selecione o Pix e ganhe 5% de desconto</p>
+        <img src="{% static 'nucleo/icons/suporte.png' %}" alt="Suporte 24h">
+        <p>Suporte 24 horas</p>
     </div>
 </section>
 
@@ -69,39 +61,21 @@
     <div class="container">
         <h2>Produtos em Destaque</h2>
         <div class="funko-grid">
-            {% comment %}
-            <!-- Vamos comentar esta parte por enquanto pois precisamos implementar a lógica de produtos em destaque -->
             {% for produto in produtos %}
             <div class="funko-item">
-                <div class="funko-image-container">
-                    <a href="#">
-                        {% if produto.imagem_principal %}
-                        <img src="{{ produto.imagem_principal.url }}" alt="{{ produto.nome }}">
-                        {% else %}
-                        <img src="{% static 'nucleo/img/placeholder_product.png' %}" alt="sem imagem">
-                        {% endif %}
-                    </a>
-                    {% if user.is_authenticated and produto.estoque > 0 %}
-                    <a href="{% url 'adicionar_ao_carrinho' produto.id %}" class="add-to-cart-btn" title="Adicionar ao carrinho">
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
-                    {% elif not user.is_authenticated %}
-                    <a href="#" class="login-btn">Entrar</a>
-                    {% endif %}
-                </div>
-                <h3>{{ produto.nome }}</h3>
-                <p class="price">R$ {{ produto.preco|floatformat:2 }}</p>
-                {% if produto.estoque > 0 %}
-                <p class="stock-info" style="color: #28a745;"><i class="fa fa-check-circle"></i> Em estoque</p>
+                {% if produto.image %}
+                    <img src="{{ produto.image.url }}" alt="{{ produto.name }}">
                 {% else %}
-                <p class="stock-info" style="color: #dc3545;"><i class="fa fa-times-circle"></i> Fora de estoque</p>
+                    <img src="{% static 'nucleo/img/default-product.png' %}" alt="Produto sem imagem">
                 {% endif %}
+                <h3>{{ produto.name }}</h3>
+                <div class="price">R$ {{ produto.price|floatformat:2 }}</div>
+                <a href="#" class="btn">Adicionar ao Carrinho</a>
             </div>
-            {% endfor %}
-            {% endcomment %}
+            {% empty %}
             <p>Produtos em destaque serão exibidos aqui.</p>
+            {% endfor %}
         </div>
     </div>
 </section>
-
 {% endblock %}
