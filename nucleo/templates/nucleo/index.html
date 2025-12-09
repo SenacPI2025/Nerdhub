@@ -76,7 +76,7 @@
                         {% if produto.main_image %}
                         <img src="{{ produto.main_image.url }}" alt="{{ produto.name }}">
                         {% else %}
-                        <img src="{% static 'nucleo/img/placeholder_product.png' %}" alt="{{ produto.name }}">
+                        <img src="{% static 'nucleo/img/placeholder_product.png' %}" alt="sem imagem">
                         {% endif %}
                     </a>
                     {% if user.is_authenticated and produto.stock > 0 %}
@@ -90,9 +90,9 @@
                 <h3>{{ produto.name }}</h3>
                 <p class="price">R$ {{ produto.price|floatformat:2 }}</p>
                 {% if produto.stock > 0 %}
-                <p class="stock-info in-stock"><i class="fa fa-check-circle"></i> Em estoque</p>
+                <p class="stock-info" style="color: #28a745;"><i class="fa fa-check-circle"></i> Em estoque</p>
                 {% else %}
-                <p class="stock-info out-of-stock"><i class="fa fa-times-circle"></i> Fora de estoque</p>
+                <p class="stock-info" style="color: #dc3545;"><i class="fa fa-times-circle"></i> Fora de estoque</p>
                 {% endif %}
             </div>
             {% empty %}
