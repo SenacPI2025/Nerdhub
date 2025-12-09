@@ -4,17 +4,17 @@
 {% block title %}Suporte - NerdHub{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Página de Suporte</h1>
+<div class="container support-container">
+    <h1 class="support-title">Página de Suporte</h1>
     <p>Esta é uma página temporária de suporte. Aqui você poderá encontrar:</p>
     
-    <ul>
+    <ul class="support-list">
         <li>Tutoriais sobre como usar nossa plataforma</li>
         <li>Soluções para problemas comuns</li>
         <li>Informações de contato para suporte técnico</li>
     </ul>
     
-    <h2>Como podemos ajudar?</h2>
+    <h2 class="support-subtitle">Como podemos ajudar?</h2>
     <p>Por favor, selecione uma das opções abaixo:</p>
     
     <div class="support-options">
@@ -34,44 +34,8 @@
         </div>
     </div>
     
-    <div class="note">
+    <div class="support-note">
         <p><strong>Observação:</strong> O chat de suporte estará disponível no perfil do usuário e será implementado completamente em uma versão futura.</p>
     </div>
 </div>
-
-<style>
-    .support-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin: 20px 0;
-    }
-    
-    .support-option {
-        flex: 1;
-        min-width: 250px;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-    }
-    
-    .support-option h3 {
-        color: #55A143;
-        margin-top: 0;
-    }
-    
-    .note {
-        background-color: #e8f5e9;
-        padding: 15px;
-        border-left: 4px solid #55A143;
-        margin-top: 30px;
-    }
-    
-    @media (max-width: 768px) {
-        .support-options {
-            flex-direction: column;
-        }
-    }
-</style>
 {% endblock %}
