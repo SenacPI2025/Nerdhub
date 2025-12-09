@@ -81,6 +81,13 @@
         
         <div class="header__bottom">
             <div class="container">
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-menu" aria-label="Menu de navegação">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
                 <nav class="main-nav" aria-label="Navegação principal">
                     <ul class="main-nav__list">
                         <li class="main-nav__item">
@@ -173,6 +180,44 @@
         </div>
     </footer>
 </body> <!-- Isso e para o suporte.html -->
-<script> function enviarMensagem() { const input = document.getElementById('user-input'); const mensagem = input.value.trim(); if (!mensagem) return; const chat = document.getElementById('chat-messages'); const userMsg = document.createElement('p'); userMsg.textContent = mensagem; userMsg.style.textAlign = 'right'; chat.appendChild(userMsg); const respostaBot = document.createElement('p'); respostaBot.classList.add('bot-message'); respostaBot.textContent = gerarResposta(mensagem); chat.appendChild(respostaBot); input.value = ''; chat.scrollTop = chat.scrollHeight; } function gerarResposta(mensagem) { mensagem = mensagem.toLowerCase(); if (mensagem.includes('erro') || mensagem.includes('problema')) { return "Sinto muito! Verifique sua conexão e tente novamente. Caso continue, fale com nosso suporte técnico."; } else if (mensagem.includes('login') || mensagem.includes('senha')) { return "Você pode redefinir sua senha clicando em 'Esqueci minha senha' na tela de login."; } else if (mensagem.includes('produto') || mensagem.includes('entrega')) { return "Você pode acompanhar seu pedido na aba 'Meus Pedidos'. Precisa de mais ajuda?"; } else { return "Desculpe, não entendi. Por favor, descreva sua dúvida com mais detalhes."; } } // Auto-hide messages after 5 seconds setTimeout(function() { var messages = document.querySelector('.messages'); if (messages) { messages.style.display = 'none'; } }, 5000); </script>
+<script> function enviarMensagem() { const input = document.getElementById('user-input'); const mensagem = input.value.trim(); if (!mensagem) return; const chat = document.getElementById('chat-messages'); const userMsg = document.createElement('p'); userMsg.textContent = mensagem; userMsg.style.textAlign = 'right'; chat.appendChild(userMsg); const respostaBot = document.createElement('p'); respostaBot.classList.add('bot-message'); respostaBot.textContent = gerarResposta(mensagem); chat.appendChild(respostaBot); input.value = ''; chat.scrollTop = chat.scrollHeight; } function gerarResposta(mensagem) { mensagem = mensagem.toLowerCase(); if (mensagem.includes('erro') || mensagem.includes('problema')) { return "Sinto muito! Verifique sua conexão e tente novamente. Caso continue, fale com nosso suporte técnico."; } else if (mensagem.includes('login') || mensagem.includes('senha')) { return "Você pode redefinir sua senha clicando em 'Esqueci minha senha' na tela de login."; } else if (mensagem.includes('produto') || mensagem.includes('entrega')) { return "Você pode acompanhar seu pedido na aba 'Meus Pedidos'. Precisa de mais ajuda?"; } else { return "Desculpe, não entendi. Por favor, descreva sua dúvida com mais detalhes."; } } // Auto-hide messages after 5 seconds setTimeout(function() { var messages = document.querySelector('.messages'); if (messages) { messages.style.display = 'none'; } }, 5000); 
+
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navList = document.querySelector('.main-nav__list');
+    
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            
+            // Animate hamburger lines
+            const spans = hamburger.querySelectorAll('span');
+            if (navList.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburger.contains(event.target) && !navList.contains(event.target) && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+                
+                // Reset hamburger lines
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+});
+</script>
 
 </html>

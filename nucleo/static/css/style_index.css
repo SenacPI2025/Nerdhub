@@ -240,8 +240,9 @@
     margin-left: auto;
     margin-right: auto;
     padding-left: 16px;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--text-primary);
+    font-weight: 700;
 }
 
 .funko-grid {
@@ -256,17 +257,19 @@
 .funko-item {
     background: var(--white);
     border-radius: 12px;
-    padding: 14px;
+    padding: 16px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
 }
 
 .funko-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .funko-image-container {
@@ -275,7 +278,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .funko-image-container img {
@@ -284,30 +288,38 @@
     object-fit: contain;
     border-radius: 8px;
     background: #fff;
-    padding: 8px;
+    padding: 12px;
+    transition: transform 0.3s ease;
+}
+
+.funko-item:hover .funko-image-container img {
+    transform: scale(1.05);
 }
 
 .price {
     color: var(--primary-dark);
     font-weight: 800;
-    margin-top: 8px;
-    font-size: 18px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .funko-item h3 {
-    font-size: 14px;
-    margin: 10px 0 0 0;
+    font-size: 16px;
+    margin: 12px 0 0 0;
     color: var(--text-primary);
-    min-height: 36px;
+    min-height: 40px;
     font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
 }
 
 /* small badge (cart/login) top-right */
 .add-to-cart-btn,
 .login-btn {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 12px;
+    right: 12px;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -317,27 +329,29 @@
     font-size: 14px;
     text-decoration: none;
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .add-to-cart-btn {
     background: var(--primary);
     color: #fff;
-    box-shadow: 0 6px 12px rgba(85, 161, 67, 0.12);
+    box-shadow: 0 4px 12px rgba(85, 161, 67, 0.2);
 }
 
 .add-to-cart-btn:hover {
     background: var(--primary-dark);
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 .login-btn {
     background: #ffc107;
     color: #111;
-    padding: 8px 10px;
+    padding: 8px 12px;
     border-radius: 20px;
     font-weight: 700;
-    right: 10px;
+    font-size: 12px;
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
 }
 
 .login-btn:hover {
@@ -346,9 +360,22 @@
 }
 
 .stock-info {
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 13px;
+    margin-top: 8px;
     font-weight: 500;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.stock-info.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.stock-info.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
 /* Footer top spacing (home-specific) */
@@ -365,17 +392,37 @@
     
     .funko-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+    
+    .funko-item {
+        padding: 15px;
+    }
+    
+    .funko-image-container img {
+        width: 150px;
+        height: 150px;
     }
 }
 
 @media (max-width: 992px) {
     .funko-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
     }
     
     .brand-card {
         min-width: 200px;
         height: 110px;
+    }
+    
+    .funko-item h3 {
+        font-size: 15px;
+        min-height: 38px;
+    }
+    
+    .price {
+        font-size: 18px;
     }
 }
 
@@ -383,11 +430,62 @@
     .funko-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+        padding: 0 12px;
     }
     
     .carousel-img {
         height: 200px;
         object-fit: cover;
+    }
+    
+    .funko-item {
+        padding: 14px;
+    }
+    
+    .funko-image-container img {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .funko-item h3 {
+        font-size: 14px;
+        min-height: 36px;
+    }
+    
+    .price {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 576px) {
+    .funkos h2 {
+        font-size: 20px;
+        padding-left: 12px;
+    }
+    
+    .funko-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .funko-item {
+        padding: 12px;
+    }
+    
+    .funko-image-container img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .funko-item h3 {
+        font-size: 13px;
+        min-height: 34px;
+    }
+    
+    .price {
+        font-size: 16px;
+        margin-top: 8px;
     }
 }
 
@@ -437,6 +535,28 @@
     
     .beneficio-item {
         min-width: 45%;
+    }
+    
+    .funko-grid {
+        padding: 0 8px;
+    }
+    
+    .funko-item {
+        padding: 10px;
+    }
+    
+    .funko-image-container img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .funko-item h3 {
+        font-size: 12px;
+        min-height: 32px;
+    }
+    
+    .price {
+        font-size: 15px;
     }
 }
 
