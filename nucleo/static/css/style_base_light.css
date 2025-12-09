@@ -105,6 +105,11 @@ body {
     .container {
         max-width: 1200px;
     }
+    
+    .main-nav__list {
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 /* ==========================================================================
@@ -115,7 +120,6 @@ body {
     box-shadow: var(--shadow-md);
     position: relative;
     z-index: var(--z-sticky);
-    border-bottom: 3px solid var(--primary);
     /* Garantir que não haja espaçamento */
     margin: 0;
     padding: 0;
@@ -140,7 +144,7 @@ body {
 .logo {
     font-family: 'Luckiest Guy', cursive, sans-serif;
     font-size: var(--font-2xl);
-    color: var(--white);
+    color: var(--white) !important;
     font-weight: 400;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -153,6 +157,15 @@ body {
     padding: 8px 16px;
     border-radius: 12px;
     overflow: hidden;
+}
+
+/* Ensure logo text is always white */
+h1 .logo, h1.logo {
+    color: var(--white) !important;
+}
+.logo a {
+    text-decoration: none;
+    color: var(--white) !important;
 }
 
 .logo::before {
@@ -388,6 +401,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    align-items: center;
 }
 
 .main-nav__list {
@@ -396,8 +410,9 @@ body {
     gap: var(--space-md);
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    width: fit-content;
 }
 
 .main-nav__link {
