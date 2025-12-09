@@ -96,6 +96,12 @@ body {
 }
 
 @media (min-width: 1200px) {
+    main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
     .container {
         max-width: 1200px;
     }
@@ -385,6 +391,7 @@ body {
 }
 
 .main-nav__list {
+    list-style-type: none;
     display: flex;
     gap: var(--space-md);
     flex-wrap: wrap;
@@ -394,6 +401,7 @@ body {
 }
 
 .main-nav__link {
+    text-decoration: none;
     color: var(--text-white);
     font-size: var(--font-base);
     font-weight: 500;
@@ -572,6 +580,17 @@ footer {
     }
 }
 
+@media (min-width: 769px) and (max-width: 1199px) {
+    main {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        padding: 0 var(--space-lg);
+    }
+}
+
 @media (max-width: 992px) {
     .header-top {
         padding: 10px 0;
@@ -622,6 +641,44 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .header__top-content {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .header__search {
+        max-width: 100%;
+        order: 3;
+        width: 100%;
+    }
+    
+    .main-nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-top > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    main {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
     .header-top {
         padding: 8px 0;
     }
@@ -730,6 +787,52 @@ footer {
     .main-nav a {
         padding: 4px 6px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-sm: 0.75rem;
+        --space-md: 1rem;
+        --space-lg: 1.5rem;
+        --font-2xl: 1.25rem;
+        --font-xl: 1.125rem;
+    }
+    
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .header__actions {
+        gap: var(--space-sm);
+    }
+    
+    .logo:hover {
+        transform: scale(1.08);
+        padding: 8px 16px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+    
+    .header__top-content {
+        gap: var(--space-sm);
+    }
+    
+    .search-input {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+    
+    .header__action {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .logo {
+        font-size: var(--font-xl);
+        padding: 6px 12px;
     }
 }
 
