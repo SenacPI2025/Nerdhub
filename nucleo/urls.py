@@ -10,4 +10,5 @@ urlpatterns = [
     path('sobre/', views.sobre, name='sobre'),
     path('suporte/', views.suporte, name='suporte'),
     path('marca/<slug:marca_slug>/', views.produtos_por_marca, name='produtos_por_marca'),
+    path('produto/<int:produto_id>/', views.detalhes_produto, name='detalhes_produto'),
 ]

@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<!-- BENEFITS STRIP -->
+<!-- BENEFÍCIOS/ATALHOS -->
 <section class="beneficios">
     <div class="beneficio-item">
         <img src="{% static 'nucleo/img/icon_cartao.png' %}" alt="Cartão">
@@ -69,37 +69,35 @@
     <div class="container">
         <h2>Produtos em Destaque</h2>
         <div class="funko-grid">
-            {% comment %}
-            <!-- Vamos comentar esta parte por enquanto pois precisamos implementar a lógica de produtos em destaque -->
-            {% for produto in produtos %}
+            {% for produto in produtos_destaque|slice:":20" %}
             <div class="funko-item">
                 <div class="funko-image-container">
-                    <a href="#">
-                        {% if produto.imagem_principal %}
-                        <img src="{{ produto.imagem_principal.url }}" alt="{{ produto.nome }}">
+                    <a href="{% url 'nucleo:detalhes_produto' produto.id %}">
+                        {% if produto.main_image %}
+                        <img src="{{ produto.main_image.url }}" alt="{{ produto.name }}">
                         {% else %}
                         <img src="{% static 'nucleo/img/placeholder_product.png' %}" alt="sem imagem">
                         {% endif %}
                     </a>
-                    {% if user.is_authenticated and produto.estoque > 0 %}
-                    <a href="{% url 'adicionar_ao_carrinho' produto.id %}" class="add-to-cart-btn" title="Adicionar ao carrinho">
+                    {% if user.is_authenticated and produto.stock > 0 %}
+                    <a href="#" class="add-to-cart-btn" title="Adicionar ao carrinho">
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                     {% elif not user.is_authenticated %}
-                    <a href="#" class="login-btn">Entrar</a>
+                    <a href="{% url 'painel:login' %}" class="login-btn">Entrar</a>
                     {% endif %}
                 </div>
-                <h3>{{ produto.nome }}</h3>
-                <p class="price">R$ {{ produto.preco|floatformat:2 }}</p>
-                {% if produto.estoque > 0 %}
+                <h3>{{ produto.name }}</h3>
+                <p class="price">R$ {{ produto.price|floatformat:2 }}</p>
+                {% if produto.stock > 0 %}
                 <p class="stock-info" style="color: #28a745;"><i class="fa fa-check-circle"></i> Em estoque</p>
                 {% else %}
                 <p class="stock-info" style="color: #dc3545;"><i class="fa fa-times-circle"></i> Fora de estoque</p>
                 {% endif %}
             </div>
+            {% empty %}
+            <p>Nenhum produto em destaque no momento.</p>
             {% endfor %}
-            {% endcomment %}
-            <p>Produtos em destaque serão exibidos aqui.</p>
         </div>
     </div>
 </section>

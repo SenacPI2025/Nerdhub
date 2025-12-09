@@ -4,83 +4,105 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}NerdHub{% endblock %}</title>
-
-    {% block extra_css %}{% endblock %}
-
+    
+    <!-- CSS principal -->
     <link rel="stylesheet" href="{% static 'css/style_base_light.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
+    
+    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    
+    {% block extra_css %}{% endblock %}
 </head>
 
 <body>
-    <!-- HEADER -->
+    <!-- ============================================ -->
+    <!-- HEADER - Cabeçalho do site -->
+    <!-- ============================================ -->
     <header class="header">
-        <div class="header-top">
-            <div class="logo-barra-de-pesquisa-icons-carrinho-e-perfil">
-                <div class="espaco-para-a-logo-centralizar-lugar-certo"></div>
-                <div class="logo-nerd-hub">NERDHUB</div>
-                <div class="nav-barra-de-pesquisa">
-                    <div class="container">
-                        <div class="barra-de-pesquisa">
-                            <div class="input">
-                                <div class="container2">
-                                    <input type="text" class="o-que-voc-est-procurando" placeholder="O que você está procurando?">
-                                </div>
-                            </div>
-                            <div class="button">
-                                <div class="container3">
-                                    <div class="container4">
-                                        <i class="fa fa-search icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-content">
+                    <h1 class="logo">
+                        <a href="{% url 'nucleo:index' %}" aria-label="Nerd Hub - Página inicial">
+                            <i class=""></i> NerdHub
+                        </a>
+                    </h1>
+                    
+                    <div class="header__search">
+                        <form class="search-form">
+                            <input 
+                                type="search" 
+                                class="search-input" 
+                                placeholder="O que você está procurando?" 
+                                aria-label="Buscar produtos"
+                            >
+                            <button type="submit" class="search-button" aria-label="Buscar">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
                     </div>
-                </div>
-                <div class="icons-perfil-e-carrinho">
-                    <div class="link">
-                        <div class="container5">
-                            <div class="container4">
-                                <a href="{% url 'nucleo:ver_carrinho' %}" class="cart-icon">
-                                    <i class="fa fa-shopping-cart icon2"></i>
-                                </a>
+                    
+                    <div class="header__actions">
+                        <!-- Ícone do carrinho -->
+                        <a href="{% url 'nucleo:ver_carrinho' %}" class="header__action" aria-label="Carrinho de compras">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        
+                        <!-- Menu de usuário condicional -->
+                        {% if user.is_authenticated %}
+                        <!-- Usuário logado -->
+                        <div class="user-menu">
+                            <button class="header__action" aria-label="Perfil do usuário">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <div class="user-menu-content">
+                                <a href="{% url 'painel:dashboard' %}">Meu Perfil</a>
+                                <a href="#">Meus Endereços</a>
+                                <a href="#">Sair</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="link-margin">
-                        <div class="link">
-                            <div class="container5">
-                                <div class="container4">
-                                    {% if user.is_authenticated %}
-                                    <div class="user-menu">
-                                        <a href="#">Olá, {{ user.username }} ▼</a>
-                                        <div class="user-menu-content">
-                                            <a href="{% url 'painel:dashboard' %}">Meu Perfil</a>
-                                            <a href="#">Meus Endereços</a>
-                                            <a href="#">Sair</a>
-                                        </div>
-                                    </div>
-                                    {% else %}
-                                    <a href="{% url 'painel:login' %}">Entrar</a>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
+                        {% else %}
+                        <!-- Usuário não logado -->
+                        <a href="{% url 'painel:login' %}" class="header__action" aria-label="Entrar">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-        <!-- NAVIGATION BAR - ESTILO ORIGINAL -->
-        <nav class="main-nav">
-            <ul>
-                <li><a href="{% url 'nucleo:index' %}" class="nav-link {% if page_name == 'index' %}active{% endif %}">Início</a></li>
-                <li><a href="{% url 'nucleo:sobre' %}" class="nav-link {% if page_name == 'sobre' %}active{% endif %}">Sobre</a></li>
-                <li><a href="{% url 'nucleo:suporte' %}" class="nav-link {% if page_name == 'suporte' %}active{% endif %}">Suporte</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- CONTEÚDO -->
+        
+        <div class="header__bottom">
+            <div class="container">
+                <nav class="main-nav" aria-label="Navegação principal">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="{% url 'nucleo:index' %}" class="main-nav__link {% if page_name == 'index' %}active{% endif %}">
+                                <i class=""></i> Principal
+                            </a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="{% url 'nucleo:sobre' %}" class="main-nav__link {% if page_name == 'sobre' %}active{% endif %}">
+                                <i class=""></i> Sobre Nós
+                            </a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="{% url 'nucleo:suporte' %}" class="main-nav__link {% if page_name == 'suporte' %}active{% endif %}">
+                                <i class=""></i> Suporte
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>    <!-- CONTEÚDO -->
     <main> {% if messages %} <div class="messages"> {% for message in messages %} <div
                 class="alert alert-{{ message.tags }}"> {{ message }} </div> {% endfor %} </div> {% endif %} {% block content %}{% endblock %} </main> <!-- FOOTER -->
     <footer>

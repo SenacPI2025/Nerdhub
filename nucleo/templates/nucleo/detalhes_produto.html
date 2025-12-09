@@ -1,0 +1,167 @@
+{% extends "nucleo/base.html" %}
+{% load static %}
+
+{% block title %}{{ produto.name }} - NerdHub{% endblock %}
+
+{% block extra_css %}
+<style>
+.produto-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.produto-imagem {
+    flex: 1;
+    min-width: 300px;
+}
+
+.produto-imagem img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.produto-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.produto-info h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.preco {
+    font-size: 32px;
+    color: #55A143;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.descricao {
+    margin: 20px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.btn-comprar {
+    background: #55A143;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-comprar:hover {
+    background: #3e8b31;
+    transform: translateY(-2px);
+}
+
+.info-adicional {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.info-item {
+    margin: 10px 0;
+}
+
+.info-item strong {
+    color: #333;
+}
+
+.estoque {
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.estoque.disponivel {
+    color: #28a745;
+}
+
+.estoque.indisponivel {
+    color: #dc3545;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="produto-container">
+    <div class="produto-imagem">
+        {% if produto.main_image %}
+        <img src="{{ produto.main_image.url }}" alt="{{ produto.name }}">
+        {% else %}
+        <img src="{% static 'nucleo/img/placeholder_product.png' %}" alt="Imagem não disponível">
+        {% endif %}
+    </div>
+    
+    <div class="produto-info">
+        <h1>{{ produto.name }}</h1>
+        
+        <div class="preco">R$ {{ produto.price|floatformat:2 }}</div>
+        
+        <div class="estoque {% if produto.stock > 0 %}disponivel{% else %}indisponivel{% endif %}">
+            {% if produto.stock > 0 %}
+            <i class="fa fa-check-circle"></i> Em estoque ({{ produto.stock }} unidades disponíveis)
+            {% else %}
+            <i class="fa fa-times-circle"></i> Produto esgotado
+            {% endif %}
+        </div>
+        
+        <div class="descricao">
+            {{ produto.description }}
+        </div>
+        
+        {% if produto.stock > 0 %}
+        <button class="btn-comprar">
+            <i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho
+        </button>
+        {% else %}
+        <button class="btn-comprar" disabled>
+            <i class="fa fa-times-circle"></i> Produto Indisponível
+        </button>
+        {% endif %}
+        
+        <div class="info-adicional">
+            {% if produto.brand %}
+            <div class="info-item"><strong>Marca:</strong> {{ produto.brand }}</div>
+            {% endif %}
+            
+            {% if produto.model %}
+            <div class="info-item"><strong>Modelo:</strong> {{ produto.model }}</div>
+            {% endif %}
+            
+            {% if produto.dimensions %}
+            <div class="info-item"><strong>Dimensões:</strong> {{ produto.dimensions }}</div>
+            {% endif %}
+            
+            {% if produto.weight %}
+            <div class="info-item"><strong>Peso:</strong> {{ produto.weight }} kg</div>
+            {% endif %}
+            
+            {% if produto.materials %}
+            <div class="info-item"><strong>Materiais:</strong> {{ produto.materials }}</div>
+            {% endif %}
+            
+            {% if produto.colors %}
+            <div class="info-item"><strong>Cores:</strong> {{ produto.colors }}</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
